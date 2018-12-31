@@ -1,1 +1,2 @@
-Max, SME,14:40:00, 31/12/2018
+# Add further lines below in format: User, role, time acessed, date accessed
+Max, SME, 14:40:00, 31/12/2018
