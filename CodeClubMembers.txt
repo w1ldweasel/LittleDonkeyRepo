@@ -1,3 +1,4 @@
 # Add further lines below in format: User, role, time acessed, date accessed
 Max, SME, 14:40:00, 31/12/2018
 Ben, Gimp, 16:33, 02/01/2019
+Max2, Learner, 10:47, 04/01/2019
