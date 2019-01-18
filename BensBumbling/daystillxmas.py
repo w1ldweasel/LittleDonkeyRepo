@@ -5,8 +5,11 @@
 import datetime
 
 dt = datetime.datetime
-delta = dt(2017, 12, 25) - dt.now()
+delta = dt(2019, 12, 25) - dt.now()
 
-print delta.days
+print ('Today\'s date is', dt.now())
+print ('There are ',delta.days, ' to Christmas')
+
+#print(delta.days)
 
 
