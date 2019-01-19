@@ -5,11 +5,10 @@
 import datetime
 
 dt = datetime.datetime
-delta = dt(2019, 12, 25) - dt.now()
+thisYear = dt.today().year
+delta = dt(thisYear, 12, 25) - dt.now()
 
-print ('Today\'s date is', dt.now())
+print ('Today\'s date is', dt.now().strftime("%B %d, %Y"))
 print ('There are ',delta.days, ' to Christmas')
 
 #print(delta.days)
-
-
