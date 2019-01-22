@@ -1,3 +1,7 @@
+#! /usr/bin/python
+
+# script to output the number of days until xmas
+
 import datetime
 
 dt = datetime.datetime
