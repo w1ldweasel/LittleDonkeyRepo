@@ -1,1 +1,6 @@
 Will put notes in here asap
+
+
+Removed some of the completity around upper and lower case l or L and E or e.  Now code forces selections to lower case regardless.
+
+
