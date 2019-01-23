@@ -5,6 +5,13 @@ Removed some of the completity around upper and lower case l or L and E or e.  N
 
 ^^^^modified in my version
 
+But what if another character is submitted??!?!!?! error control ???
+
+
+
+
+
+
 I think the lotto code is better using a seperate function for the generating of the numbers, this could be expanded so that it take the number ranges from the users choice of game.
 
 ^^^^still to be done
