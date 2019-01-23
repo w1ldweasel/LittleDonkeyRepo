@@ -12,6 +12,7 @@ def askgamechoice(*answer):
     generate_lotto_numbers()
   elif game_choice.lower() == 'e':
     generate_euro_numbers()
+  else: print('You did not enter L or E, so quitting')
 
 # function that returns 6 random numbers
 def generate_lotto_numbers():
@@ -50,3 +51,4 @@ def new_random_list(number_list_arg):
 #main()
 if __name__ == "__main__":
   askgamechoice()
+
