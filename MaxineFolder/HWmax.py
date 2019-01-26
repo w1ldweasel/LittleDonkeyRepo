@@ -12,4 +12,6 @@ print ('hello world')
 print ('hello ' + name)
 
 
-
+#Hi Max, if you test the code it works as Max because Python automatically creates a string from the user input
+#So the quote is not necessary, also not what an end user normally expects to do
+#In terms of user message, better to say single quote or double quote
