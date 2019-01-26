@@ -10,3 +10,6 @@ else:
     print "Your name is", arg
     print "The name", arg, "has", len(arg), "letters in it"
     print arg, "backwards is", arg[::-1]
+
+#Hi Ben missing parentheses for the print statement, so it #doesn't work on python 3.X interpreters
+#get Anaconda from https://www.anaconda.com/download/
