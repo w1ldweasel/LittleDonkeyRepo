@@ -1,0 +1,16 @@
+differences between code
+-------------------------
+
+lotto generates 6 random numbers and prints them.
+
+euromillions gets a random number from a range, adds to end of list and prints them.
+
+- not sure if running time would be impacted by the append command, as opposed to just printing and I can't see a benefit in appending, as all numbers are printed at one time within the function.
+- lotto doesn't define a range, so number could be generated which is not appropriate for the game.
+
+lotto code is simpler, so better for maintenance, however there is no ability to control the range of numbers, therefore think euromillions is superior.
+(I think ideal code would be a combo - use lotto code but add a range)
+
+UPDATED LOTTO CODE TO SUPERIOR APPROACH 
+SORTED NUMBERS IN ASCENDING ORDER 
+
