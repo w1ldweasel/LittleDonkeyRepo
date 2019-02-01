@@ -2,20 +2,18 @@
 """
 Spyder Editor
 
-This is a hello world file.
+This is a hello world program file.
+By Max Ng
 """
 
 #!/python
 
-import platform
-
 def main():
     print('\n')  
     print('Hello World!')
-    name = input('What is your name? >')  
+    name = input('What is your name? :')  
     print('\n')        
-    print ('Hello ', name)
-def message():
-  print('This is python version {}'.format(platform.python_version()))
+    print ('Hello ', name, '!')
+
 
 if __name__ == '__main__': main()
