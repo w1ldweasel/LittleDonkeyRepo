@@ -1,0 +1,5 @@
+the superior approach i believe was within the Euromillions code as this generated random numbers within a defined range.
+
+with the lotto code there is no way currently to define which numbers are to be selected as a range isnt defined i.e as euromillions has a range so only numbers between 1-50 will be selected and 1-13 for the star numbers. the correct approach would be to add this on to the Lotto code to allow it to select the numbers within a defined range. 
+
+next step would be to add the lists to be sorted in ascending order by using a sort function.
