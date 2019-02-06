@@ -1,0 +1,32 @@
+##
+Differences between the two
+-------------------------------
+
+Lotto
+generates random number in any order- max 6
+
+
+Euro
+lotto number - random integer from 1 to 51 and only 5 will be randomly picked
+star numbers - random integer from 1 to 13 and only 2 will be picked
+gives random number between 2 given numbers in any order
+
+The second part of the code relating to flag ensures that when the game is run again, the same set of random numbers are not generated again.  Numbers that have already been generated are stored in a temp list which is checked before new numbers are generated. 
+
+The apend part of the code is saying, if the new numbers are not already in the list, print them on screen and then add them to the end of the temp list after the other stored generated numbers. This bit of the code applies to both lotto and euro.
+
+
+Which is superior? 
+-------------------
+Lotto is a simple easy to maintain 1 step code
+
+Euro is superior due to it having two steps to perform in the code.  i.e is generating 2 different types of random numbers each with different ranges
+
+UPDATED LOTTO TO SUPERIOR CODE.  SORTED BOTH IN ASCENDING ORDER
+
+
+
+
+
+
+

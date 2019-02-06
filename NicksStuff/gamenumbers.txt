@@ -1,17 +1,19 @@
 Will put notes in here asap
 
 
-Removed some of the completity around upper and lower case l or L and E or e.  Now code forces selections to lower case regardless.
+Removed some of the completity around upper and lower case l or L and E or e.  Now code forces selections to lower case regardless of input, also if another key is submitted program will tell you and just escape.
 
-^^^^modified in my version
+Added the append to the lotto numbers as i think it would be more efficient to just add to the end rather than generate it ALL prior to making it a string.
 
-But what if another character is submitted??!?!!?! error control ???
-
-
+Added sorting of the numbers to Lotto / Euro Balls and Star Balls.
 
 
 
 
-I think the lotto code is better using a seperate function for the generating of the numbers, this could be expanded so that it take the number ranges from the users choice of game.
 
-^^^^still to be done
+
+
+
+
+
+

@@ -4,9 +4,14 @@
 
 import datetime
 
-dt = datetime.datetime
-currentYear = dt.now().year
-delta = dt(currentYear, 12, 25) - dt.now()
 
+dt = datetime.date
+year = dt.now().year
+xmas = dt.date(year,12,25)
+delta = dt(xmas) - dt.now()
 print ('Today\'s date is', dt.now())
 print ('There are ',delta.days, ' to Christmas')
+
+#print(delta.days)
+
+
