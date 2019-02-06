@@ -42,6 +42,8 @@ def proceed_hwnumber():
 if __name__ == "__main__":
   proceed_hwnumber()
   
+  
+  
 
 
 #Hi Max, if you test the code it works as Max because Python automatically creates a string from the user input
