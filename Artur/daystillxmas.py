@@ -14,4 +14,8 @@ print ('There are ',delta.days, ' to Christmas')
 
 #print(delta.days)
 
-
+"""
+I'm getting an error on line 9, 
+intepreter is complaining that datetime.date (which is what dt is set to) 
+does not have a now attribute
+"""

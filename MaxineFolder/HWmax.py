@@ -45,9 +45,8 @@ if __name__ == "__main__":
   
   
 
-
-#Hi Max, if you test the code it works as Max because Python automatically creates a string from the user input
-#So the quote is not necessary, also not what an end user normally expects to do
-#In terms of user message, better to say single quote or double quote
-
+"""
+Hi Max, it works but seems rather clunky with the unnatural way to enter the date.  
+take a look at the datetime.strptime method
+"""
 # MM - updated after running within Spyder.  Updated ReadMe to reflect 
