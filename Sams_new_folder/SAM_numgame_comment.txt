@@ -13,8 +13,11 @@ gives random number between 2 given numbers in any order
 
 The second part of the code relating to flag ensures that when the game is run again, the same set of random numbers are not generated again.  Numbers that have already been generated are stored in a temp list which is checked before new numbers are generated. 
 
+MN each time the code is run its actually a completely fresh run so there is no reference to any previous executions. If I've read your comments right.
+
 The apend part of the code is saying, if the new numbers are not already in the list, print them on screen and then add them to the end of the temp list after the other stored generated numbers. This bit of the code applies to both lotto and euro.
 
+MN The append is just appending the number to the end of the list, when the required count has been completed then the list is complete.
 
 Which is superior? 
 -------------------

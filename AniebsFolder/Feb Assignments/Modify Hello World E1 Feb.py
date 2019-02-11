@@ -33,3 +33,9 @@ def cal_age(DOB):
 
 age = cal_age(date_of_birth) 
 print(age)
+
+"""
+You have all the basic elements but perhaps ask for the date input in a more standard format 
+and tidy up the output message formatting so that the 
+'Your age is' message is on a new line and age is on the same line as this
+"""

@@ -14,3 +14,8 @@ print ('*** Christmas Week ***')
 else:
 print ('Today\'s date is', dt.now())
 print ('There are ',delta.days, ' to Christmas')
+
+
+""" 
+Lack of indent after If statement
+"""

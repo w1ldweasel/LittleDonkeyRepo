@@ -33,4 +33,9 @@ SavingTargetConvert = str(round(SavingTargetConvert, 2))
 print ("You need to save £" + MonthlySavingAmount + " a month for the next " + MonthCalculation + " Months")
 print ("There are only",delta.days, 'days to Cyber Monday Get Saving to Reach Your Goal!!')
 
-
+"""
+MN 
+The value of Cyber Monday has been hardcoded, that is a programming no no
+This calculation will be more precise by calculating the number of pay days to christmas 
+or even more correct depending on which part of the month its run
+"""

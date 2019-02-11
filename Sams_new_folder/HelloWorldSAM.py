@@ -10,3 +10,4 @@ person = input ('What is your name?: ')
 print ('Hello', person)
 
 
+#MN the "Hello World" can be uncommented to output that greeting as well.
