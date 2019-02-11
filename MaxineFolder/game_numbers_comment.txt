@@ -14,5 +14,3 @@ lotto code is simpler, so better for maintenance, however there is no ability to
 UPDATED LOTTO CODE TO SUPERIOR APPROACH 
 SORTED NUMBERS IN ASCENDING ORDER 
 
-**Lotto code is using the range defined in new_random_list module (which I previously hadn't noticed!).  This module defines a range and also has functionality to prevent duplicates.  
-
