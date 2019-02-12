@@ -5,6 +5,7 @@
 
 import datetime
 from datetime import date
+from dateutil.relativedelta import relativedelta, TH
 
 
 def proceed_shopdays():
@@ -20,7 +21,7 @@ def proceed_shopdays():
 
 #example of how much monthly savings give for xmas
     exsave = 1000
-  
+    
 #    weekday() == 0 (MON)
 #    weekday() == 4 (THUR)
 #   last sunday in Nov = thanksgiving
@@ -52,7 +53,7 @@ def proceed_shopdays():
 #    print ('There are ',cmdelta.days, ' days to Cyber Monday')
     print ('There are ',delta.days, ' days to Christmas')
 
-
+    
 #code to run first function if program is started in interpreter
 if __name__ == "__main__":
   proceed_shopdays()
