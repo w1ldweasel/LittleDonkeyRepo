@@ -15,3 +15,5 @@ UPDATED LOTTO CODE TO SUPERIOR APPROACH
 SORTED NUMBERS IN ASCENDING ORDER 
 
 MN Can you check how the lotto numbers were generated in the original code, if there's nothing defining the range, what is the source of the numbers and what's limiting the size?
+
+Lotto code is using the range defined in new_random_list module (which I previously hadn't noticed!).  This module defines a range and also has functionality to prevent duplicates.  
