@@ -12,7 +12,14 @@ def getagefromdate(d):
 
 
 def itsyourbirthday(d):
-    # run out of time, will update this in next version!
+    # this function returns true if d is the users birthday
+    import datetime
+    today = datetime.date.today()
+    dob = datetime.datetime.strptime(d, '%d/%m/%Y')
+    if today.month == dob.month and today.day == dob.day:
+        return True
+    else:
+        return False
 
 
 def isvaliddate(d):
@@ -26,17 +33,23 @@ def isvaliddate(d):
 
 
 def sayhi(myname):
+    print("Hello " + myname)
+
+
+def getdateofbirth():
     dob = ""
+    i = 0
     # validate date string in dob
     while not isvaliddate(dob):
-        dob = input("\nHello " + myname + ". \n Impart your sensitive personal"
-                    " details here so i can destroy your credit rating with a "
-                    "£6000 spending spree on frozen tiramisu's at Iceland."
-                    " \n What is your DoB? (dd/mm/yyyy):\n")
-
-    userage = getagefromdate(dob)
-    print("\n Oh i'm surprised, you are " + str(userage) + ", you don't look a"
-          " day over " + str((userage + 15)))
+        if i == 0:
+            dob = input("\nImpart your sensitive details here "
+                        "so i can destroy your credit rating "
+                        "on frozen tiramisu's from Iceland."
+                        "\nWhat is your DoB? (dd/mm/yyyy):\n")
+        else:
+            dob = input("\n**Tut** - try again with a valid date.")
+        i += 1
+    return dob
 
 if __name__ == "__main__":
     import sys
@@ -47,3 +60,13 @@ if __name__ == "__main__":
         sayhi(n)
     else:
         sayhi(sys.argv[1])
+    # ask the user for their date of birth
+    dob = getdateofbirth()
+    # calculate their age as of today
+    userage = getagefromdate(dob)
+    print("\nOh i'm surprised, you are " + str(userage) + ", you don't look a"
+          " day over " + str((userage + 15)))
+    # check if it's the users birthday
+    bday = itsyourbirthday(dob)
+    if bday:
+        print("Happy " + str(userage) + " Birthday!")
