@@ -10,7 +10,6 @@
 import random
 from datetime import date
 
-tdate = date.today()
 
 # Intro message
 def askgamechoice(*answer):
@@ -63,7 +62,7 @@ def generate_lotto_numbers():
     if print_choice == 'Y' or print_choice =='y':
         f = open("lotto_numbers.txt", "a+")
     # sort writing date to file - THIS DOESNT WORK YET!
-        f.write(lotto_numbers + " " + tdate + "\n")
+        f.write("Lotto Numbers - %s, played on %s\n" %(lotto_numbers, date.today()))
         f.close()
         print('Your numbers have been saved')
     elif print_choice != 'Y' or print_choice !='y':
@@ -96,7 +95,7 @@ def generate_euro_numbers():
     if print_choice == 'Y' or print_choice =='y':
         f = open("euro_numbers.txt", "a+")
 # sort writing date to file - THIS DOESNT WORK YET!
-        f.write(euro_numbers + star_numbers + " " + tdate + "\n")
+        f.write("Euro Numbers - %s, Star Numbers - %s, played on %s\n" %(euro_numbers, star_numbers, date.today()))
         f.close()
         print('Your numbers have been saved')
     elif print_choice != 'Y' or print_choice !='y':
