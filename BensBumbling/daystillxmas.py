@@ -1,15 +1,18 @@
 #! /usr/bin/python
-
 # script to output the number of days until xmas
 
 import datetime
 
+time = datetime.datetime.now()
+
+#work out the year we are in
+currentYear = time.strftime('%Y')
+
+#how many days calc
 dt = datetime.datetime
-delta = dt(2019, 12, 25) - dt.now()
+xmas = dt(int(currentYear), 12, 25) - dt.now()
 
-print ('Today\'s date is', dt.now())
-print ('There are ',delta.days, ' to Christmas')
-
-#print(delta.days)
+#output
+print ("It is the year", currentYear, ". Today is day", time.strftime('%d'), 'of the', time.strftime('%m'), 'month. This means there are', xmas.days, 'days until xmas.')
 
 
