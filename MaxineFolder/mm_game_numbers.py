@@ -13,31 +13,23 @@ from datetime import date
 
 # Intro message
 def askgamechoice(*answer):
-    print('\n\n')        
-    print ("Which game would you like to play? Enter \'l\' for Lotto or \'e\' for Euromillions.")
-    print ("Enter \'q\' to quit the game")
-    game_choice = input('Choice > ')
+    game_choice = 'x'
      
     while game_choice != 'Q' or game_choice != 'q':
+        print('\n\n')        
+        print ("Which game would you like to play? Enter \'l\' for Lotto or \'e\' for Euromillions.")
+        print ("Enter \'q\' to quit the game")
+        game_choice = input('Choice > ')
+        
         if game_choice == 'L' or game_choice =='l':
             generate_lotto_numbers()
-            print('\n\n')        
-            print ("Which game would you like to play? Enter \'l\' for Lotto or \'e\' for Euromillions.")
-            print ("Enter \'q\' to quit the game")
-            game_choice = input('Choice > ')
         elif game_choice == 'E' or game_choice =='e':
             generate_euro_numbers()
-            print('\n\n')        
-            print ("Which game would you like to play? Enter \'l\' for Lotto or \'e\' for Euromillions.")
-            print ("Enter \'q\' to quit the game")
-            game_choice = input('Choice > ')
         elif game_choice == 'Q' or game_choice == 'q':
             break
             quit_game()
         elif game_choice != 'L' or game_choice !='l' or game_choice != 'E' or game_choice !='e':
-            print ("That is not an option.  Please enter \'l\' for Lotto or \'e\' for Euromillions.")
-            print ("Enter \'q\' to quit the game")
-            game_choice = input('Choice > ')
+            print ("That is not an option.  Please select one of the options listed.")
 
 
 

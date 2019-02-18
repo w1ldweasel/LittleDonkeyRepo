@@ -5,7 +5,6 @@
 
 import datetime
 from datetime import date
-from dateutil.relativedelta import relativedelta, TH
 
 
 def proceed_shopdays():
@@ -21,16 +20,10 @@ def proceed_shopdays():
 
 #example of how much monthly savings give for xmas
     exsave = 1000
-    
-#    weekday() == 0 (MON)
-#    weekday() == 4 (THUR)
-#   last sunday in Nov = thanksgiving
-#   cyber monday is monday following that
-    
-#    cmdelta = dt(cyber mon?) - dt.now()
-    
+        
     months = 12 - dt.now().month
     thisamount = exsave / months
+    # this isnt right if month is december!!!!**
     
     print (" ")
     print ("If you would like to save £1000 for Christmas, you will need to save £", round(thisamount), " a month from now")
@@ -41,7 +34,17 @@ def proceed_shopdays():
 
     
 #savings calculation
-    otheramount = usersave / months
+    tdate = date.today()
+    tmonth = date.month()
+    
+    if tdate < 20:
+        dmonth = 11 - tmonth
+        otheramount = usersave / dmonth
+    elif tdate > 20:
+        dmonth = 10 - tmonth
+        otheramount = usersave / dmonth
+    elif tdate >= 20 and tmonth = 11:
+        otheramount = usersave
 
 
 #output to user
@@ -50,7 +53,6 @@ def proceed_shopdays():
     print("This will give you £", usersave, " to spend on Cyber Monday deals!")
 
     print (" ")
-#    print ('There are ',cmdelta.days, ' days to Cyber Monday')
     print ('There are ',delta.days, ' days to Christmas')
 
     
