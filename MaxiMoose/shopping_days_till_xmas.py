@@ -2,7 +2,7 @@
 """
 Spyder Editor
 
-Program to calculate days to xmas.
+Program to calculate xmas savings budget.
 By Max Ng
 """
 
@@ -36,3 +36,5 @@ def main():
         print ('There are ', (next_yr_xmas_day - today).days, ' days to Christmas next year.')
         
 if __name__ == '__main__': main()
+
+
