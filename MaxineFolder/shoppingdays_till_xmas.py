@@ -20,10 +20,23 @@ def proceed_shopdays():
 
 #example of how much monthly savings give for xmas
     exsave = 1000
-        
-    months = 12 - dt.now().month
-    thisamount = exsave / months
-    # this isnt right if month is december!!!!**
+    
+    tdate = dt.now().day
+    tmonth = dt.now().month
+    
+    if tdate >= 20 and tmonth == 11:
+        thisamount = exsave
+    elif tdate < 20 and tmonth == 12:
+        thisamount = exsave / 11
+    elif tdate >= 20 and tmonth == 12:
+        thisamount = exsave / 10
+    elif tdate < 20:
+        dmonth = 12 - tmonth
+        thisamount = exsave / dmonth
+    elif tdate >= 20:
+        dmonth = 11 - tmonth
+        thisamount = exsave / dmonth
+
     
     print (" ")
     print ("If you would like to save £1000 for Christmas, you will need to save £", round(thisamount), " a month from now")
@@ -34,17 +47,22 @@ def proceed_shopdays():
 
     
 #savings calculation
-    tdate = date.today()
-    tmonth = date.month()
+    tdate = dt.now().day
+    tmonth = dt.now().month
     
-    if tdate < 20:
+    if tdate >= 20 and tmonth == 11:
+        otheramount = usersave
+    elif tdate < 20 and tmonth == 12:
+        otheramount = usersave / 11
+    elif tdate >= 20 and tmonth == 12:
+        otheramount = usersave / 10
+    elif tdate < 20:
+        dmonth = 12 - tmonth
+        otheramount = usersave / dmonth
+    elif tdate >= 20:
         dmonth = 11 - tmonth
         otheramount = usersave / dmonth
-    elif tdate > 20:
-        dmonth = 10 - tmonth
-        otheramount = usersave / dmonth
-    elif tdate >= 20 and tmonth = 11:
-        otheramount = usersave
+    #finish this!!!!!
 
 
 #output to user
