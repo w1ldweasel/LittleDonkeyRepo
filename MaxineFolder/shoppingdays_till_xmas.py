@@ -49,20 +49,23 @@ def proceed_shopdays():
 #savings calculation
     tdate = dt.now().day
     tmonth = dt.now().month
+   
+#test case set up
+#    tdate = 25
+#    tmonth = 7
     
     if tdate >= 20 and tmonth == 11:
         otheramount = usersave
     elif tdate < 20 and tmonth == 12:
-        otheramount = usersave / 11
+        otheramount = usersave / 12
     elif tdate >= 20 and tmonth == 12:
-        otheramount = usersave / 10
+        otheramount = usersave / 11
     elif tdate < 20:
         dmonth = 12 - tmonth
         otheramount = usersave / dmonth
     elif tdate >= 20:
         dmonth = 11 - tmonth
         otheramount = usersave / dmonth
-    #finish this!!!!!
 
 
 #output to user
