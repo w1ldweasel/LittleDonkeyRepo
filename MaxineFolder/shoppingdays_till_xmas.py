@@ -27,9 +27,9 @@ def proceed_shopdays():
     if tdate >= 20 and tmonth == 11:
         thisamount = exsave
     elif tdate < 20 and tmonth == 12:
-        thisamount = exsave / 11
+        thisamount = exsave / 12
     elif tdate >= 20 and tmonth == 12:
-        thisamount = exsave / 10
+        thisamount = exsave / 11
     elif tdate < 20:
         dmonth = 12 - tmonth
         thisamount = exsave / dmonth
