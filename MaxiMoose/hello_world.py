@@ -8,9 +8,8 @@ By Max Ng
 
 #!/python
 
-from datetime import date
 from datetime import datetime
-from datetime import timedelta
+from dateutil.relativedelta import relativedelta
 
 
 def main():
@@ -22,14 +21,17 @@ def main():
     dobinput = input('What is your Date of Birth? Enter in the format DD/MM/CCYY :') 
     dob = datetime.strptime( dobinput, '%d/%m/%Y')  
     
-    # print (dob.strftime('%d/%m/%Y') )
-    age = today - dob
+    age_years = relativedelta(today, dob).years
     
     print('\n') 
     print('Hello World!')       
-    print ('Hello ', name, '!')
-    print ('You are ', age, '!')
-    print('\n')  
-
+    print ('Hello ', name, ' !')
+    print ('You are ', age_years, '!')
+    if today.month == dob.month:
+        if today.day == dob.day:
+            print('Happy Birthday ', name, '!')
+        else:print('Bye')
+    else:print('Bye')
+ 
     
 if __name__ == '__main__': main()
