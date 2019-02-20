@@ -33,10 +33,10 @@ def generate_euro_numbers():
     euro_numbers = []
     star_numbers = []
     for i in range(5):
-        euro_number = random.randint(1,51)  
+        euro_number = random.randint(1,50)  
         euro_numbers.append(euro_number)
     for i in range(2):
-        star_number = random.randint(1,13)  
+        star_number = random.randint(1,12)  
         star_numbers.append(star_number)
 
     print('These are your five main numbers and two star numbers:')                
@@ -51,7 +51,7 @@ def new_random_list(number_list_arg):
     flag = len(temp_list)
 #    print('flag = ', flag)
     while flag == current_list_size:
-        new_number = random.randint(1,60)
+        new_number = random.randint(1,59)
 #            print('new random number')
 #            print(new_number)
 #        print(temp_list)
