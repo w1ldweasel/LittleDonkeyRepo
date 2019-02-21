@@ -15,19 +15,21 @@ print(" | |   / _` | '__| '_ \/ __| | |\/| |/ _ \ '_ \| | | |")
 print(" | |__| (_| | |  | | | \__ \ | |  | |  __/ | | | |_| |")
 print("  \____\__,_|_|  |_| |_|___/ |_|  |_|\___|_| |_|\__,_|")
 print("\n")
-print("Press 1,2, 3 to run your choosen script or Q to exit")
+print("Press 1, 2, 3 to run your choosen script or Q to exit")
 print("\n")
 print("1 : Hello World")
 print("2 : Lotto Numbers")
 print("3 : Christmas Countdown")
 print()
 print("q : Quit")
+print()
 
 def choice():
     """
     Menu Choices
     """
     script_choice = input('Choice >')
+    print()
     if script_choice == '1':
         call(["python", "HelloWorld.py"])
     elif script_choice == '2':
