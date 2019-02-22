@@ -43,8 +43,12 @@ def proceed_shopdays():
 
    
 #user input
-    usersave = int(input("How much do you need to save for Christmas in Pound Sterling?"))
-
+    while True:
+        try:
+            usersave = int(input("How much do you need to save for Christmas in Pound Sterling?"))
+            break
+        except ValueError:
+            print ("That's not the correct format, please enter a number to save in Pounds" )
     
 #savings calculation
     tdate = dt.now().day

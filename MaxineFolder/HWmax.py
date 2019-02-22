@@ -13,8 +13,13 @@ def proceed_hwnumber2():
     
 #user to supply input to program
     name = input("Please tell me your name: ")
-    askdob = input(name + ", please tell me your date of birth in the format DD/MM/YYYY: ")
-    dob = datetime.strptime(askdob, "%d/%m/%Y").date()
+    while True:
+        try:
+            askdob = input(name + ", please tell me your date of birth in the format DD/MM/YYYY: ")
+            dob = datetime.strptime(askdob, "%d/%m/%Y").date()
+            break
+        except ValueError:
+            print ("That's not the correct format!")
 
 
 #calculate users age today 
@@ -37,10 +42,11 @@ def proceed_hwnumber2():
     if dob.day == today.day and dob.month == today.month:
         print("Happy Birthday " + name)
 
-
+    
 #code to run first function if program is started in interpreter
 if __name__ == "__main__":
   proceed_hwnumber2()
+      
 
 
 #def proceed_hwnumber():
