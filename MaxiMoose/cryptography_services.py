@@ -29,7 +29,9 @@ def encrypt_text():
     print (cipher_text)
     
     #Test the decryption
-    plaintext_message = cipher.decrypt(cipher_text)
+    decrypted_message = cipher.decrypt(cipher_text)
+    print (decrypted_message)
+    plaintext_message = decrypted_message.decode()
     print (plaintext_message)
     
 
