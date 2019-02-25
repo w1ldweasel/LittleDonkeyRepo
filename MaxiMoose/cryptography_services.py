@@ -10,29 +10,36 @@ import base64
 
 def main(): 
     generate_key()
-    encrypt_text()
+    encrypt_text_input()
 
 def generate_key():
-    f = open("keyfile.txt", "wb")
+    keyfile_name = input("Enter name of file to save key >")
+    keyfile_name = keyfile_name + ".key"
+    print(keyfile_name)
+    f = open(keyfile_name, "wb")
     key = Fernet.generate_key()
     f.write(key)
+    f.close()
      
 
-def encrypt_text():
-    f = open("keyfile.txt", "rb")
+def encrypt_text_input():
+    message = input("Enter plaintext >") 
+    keyfile = input("Enter key filename >") 
+    keyfile = keyfile + ".key"
+    
+    f = open(keyfile, "rb")
     key = f.read()
-    print (key)
-    message = 'plaintext blah'
+    f.close()
+    
     encoded_message = message.encode()
     cipher = Fernet(key)
     cipher_text = cipher.encrypt(encoded_message)
-    print (cipher_text)
+    print (cipher_text) #Use to output the ciphertext
     
-    #Test the decryption
-    decrypted_message = cipher.decrypt(cipher_text)
-    print (decrypted_message)
+    #Test the decryption restores the original plaintext
+    """decrypted_message = cipher.decrypt(cipher_text)
     plaintext_message = decrypted_message.decode()
-    print (plaintext_message)
+    print (plaintext_message)"""
     
 
 def base64_encode():
