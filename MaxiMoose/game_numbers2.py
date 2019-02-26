@@ -26,6 +26,7 @@ def generate_lotto_numbers():
         lotto_numbers = new_random_list(lotto_numbers, 59)
         
     print('These are your six numbers:')
+    lotto_numbers.sort()    
     print(lotto_numbers)
 
 # function that returns 5 random main numbers and 2 'star' numbers
@@ -33,11 +34,13 @@ def generate_euro_numbers():
     euro_numbers = []
     star_numbers = []
     for i in range(5):
-        euro_numbers = new_random_list(euro_numbers,5)  
+        euro_numbers = new_random_list(euro_numbers,50)  
     for i in range(2):
-        star_numbers = new_random_list(star_numbers,3)  
+        star_numbers = new_random_list(star_numbers,12)  
 
-    print('These are your five main numbers and two star numbers:')                
+    print('These are your five main numbers and two star numbers:')
+    euro_numbers.sort()
+    star_numbers.sort()                
     print(euro_numbers)
     print(star_numbers)
 
