@@ -11,7 +11,7 @@ import base64
 def main(): 
 
     print ("\n")
-    print ("Choose an option 1, 2 or 3")
+    print ("Choose an option 1, 2, 3, 4")
     print ("1 to generate a new key")
     print ("2 to encrypt a file")
     print ("3 to decrypt a file")
@@ -37,7 +37,7 @@ def generate_key():
      
 def encrypt_file():
     keyfile = input("Enter key filename to retrieve key >") 
-    source_file = input("Enter filename to encrypt plaintext, including extension >") 
+    source_file = input("Enter filename to encrypt contents, including extension >") 
     
     f = open(keyfile, "rb")
     key = f.read()
@@ -60,7 +60,7 @@ def encrypt_file():
 def decrypt_file():
     #Restore the original plaintext
     keyfile = input("Enter key filename to get the original encryption key >")
-    source_file = input("Enter filename to decrypt, including extension >") 
+    source_file = input("Enter filename to decrypt contents, including extension >") 
     
     f = open(keyfile, "rb")
     key = f.read()
@@ -80,8 +80,9 @@ def decrypt_file():
     
     
 def encrypt_text_input():
-    message = input("Enter plaintext >") 
     keyfile = input("Enter key filename >") 
+    message = input("Enter plaintext >") 
+
     
     f = open(keyfile, "rb")
     key = f.read()
