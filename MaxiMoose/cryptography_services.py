@@ -155,7 +155,7 @@ def base64_decode():
     f.close()
     f = open(decoded_file, "w")
     decoded_output= base64.b64decode(input_file) 
-    base64decoded_file = f.write(decoded_output.decode())#decode the byte outbut from Base64 decoding
+    base64decoded_file = f.write(decoded_output.decode())#decode the byte output from Base64 decoding
     f.close()
 
 if __name__ == "__main__":

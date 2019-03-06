@@ -20,12 +20,12 @@ def main():
 
 def base64_decode(source_file, decoded_file):
 
-    f = open(source_file, "r")
+    f = open(source_file, "rb")
     input_file = f.read()
     f.close()
     f = open(decoded_file, "w")
     decoded_output= base64.b64decode(input_file) 
-    decoded_file = f.write(decoded_output.decode())#decode the byte outbut from Base64 decoding
+    decoded_file = f.write(decoded_output.decode())#decode the byte output from Base64 decoding
     f.close()
 
 if __name__ == "__main__":
