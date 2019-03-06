@@ -3,6 +3,11 @@
 from datetime import date
 from datetime import datetime
 
+
+def testuser():
+    testuser.name = "testuser"
+    testuser.dob = datetime.strptime("01/11/1992", "%d/%m/%Y")
+
 def user():
     
     user.name = input ("What is your name?")
@@ -13,13 +18,23 @@ def user():
             break
         except ValueError:
             print ("Wrong format, try again...")
-                
+
+def bday(dob):
+    todaysdate = datetime.now().date()
+    dobdate = dob.date()
+    yeardiff = todaysdate.year - dobdate.year
+    bdaydate = datetime.strpti(todaysdate.year, dobdate.month, dobdate.day)
+    print (todaysdate)
+    print (dobdate)
+    print (yeardiff) 
+    print (bdaydate)
+
+   
+
 def main():
-    user()
-    try:
-        print (user.name)
-        print (user.dob)
-    except AttributeError:
-        print ("nah")
+    testuser()
+    bday(testuser.dob)
+    print (testuser.name)
+    print (testuser.dob)
 
 main()
