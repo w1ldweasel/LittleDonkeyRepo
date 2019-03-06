@@ -9,13 +9,25 @@ from cryptography.fernet import Fernet
 import base64
 
 def main(): 
-
+    
+    print ("\n")
+    print ("Choose an option 1, 2")
+    print ("1 for encryption")
+    print ("2 to Base64 encode a file" )
+    user_selection = input("Enter choice >")
+    if user_selection == '1':
+        fernet_encryption()
+    elif user_selection == '2':
+        base64_encode()
+    else: print("No valid choice entered, closing.") 
+    
+def fernet_encryption(): 
     print ("\n")
     print ("Choose an option 1, 2, 3, 4")
     print ("1 to generate a new key")
     print ("2 to encrypt a file")
     print ("3 to decrypt a file")
-    print ("4 to encrypt input text")
+    #print ("4 to encrypt input text")
     user_selection = input("Enter choice >")
     
     if user_selection == '1':
@@ -91,20 +103,32 @@ def encrypt_text_input():
     encoded_message = message.encode()
     cipher = Fernet(key)
     cipher_text = cipher.encrypt(encoded_message)
+    print ("\n")
+    print ("Cipher text: ")
     print (cipher_text) #Use to output the ciphertext
     
     #Test the decryption restores the original plaintext
     decrypted_message = cipher.decrypt(cipher_text)
     plaintext_message = decrypted_message.decode()
+    print ("\n")
+    print ("Original plaintext: ")
     print (plaintext_message)
     
 
 def base64_encode():
-    encoded_data = base64.b64encode("Base64 encode this text")
-    print(encoded_data)
+    source_file = input("Enter filename to encode >") 
+    encoded_file = input("Enter filename to save encoded file as >") 
+    f = open(source_file, "r")
+    input_file = f.read()
+    f.close()
+    f = open(encoded_file, "wb")
+    encoded_output= base64.b64encode(input_file.encode()) 
+    encoded_file = f.write(encoded_output)
+    f.close()
+    #print(encoded_data)
     
 def base64_decode(encoded_text):
-    decoded_data = base64.b64encode(encoded_text)
+    decoded_data = base64.decode(encoded_text)
     print(decoded_data)
 
 if __name__ == "__main__":
