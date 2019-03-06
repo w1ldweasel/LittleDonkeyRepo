@@ -14,11 +14,14 @@ def main():
     print ("Choose an option 1, 2")
     print ("1 for encryption")
     print ("2 to Base64 encode a file" )
+    print ("3 to Base64 decode a file" )
     user_selection = input("Enter choice >")
     if user_selection == '1':
         fernet_encryption()
     elif user_selection == '2':
         base64_encode()
+    elif user_selection == '3':
+        base64_decode()
     else: print("No valid choice entered, closing.") 
     
 def fernet_encryption(): 
@@ -125,11 +128,18 @@ def base64_encode():
     encoded_output= base64.b64encode(input_file.encode()) 
     encoded_file = f.write(encoded_output)
     f.close()
-    #print(encoded_data)
+
     
-def base64_decode(encoded_text):
-    decoded_data = base64.decode(encoded_text)
-    print(decoded_data)
+def base64_decode():
+    source_file = input("Enter filename to decode >") 
+    decoded_file = input("Enter filename to save decoded file as >") 
+    f = open(source_file, "rb")
+    input_file = f.read()
+    f.close()
+    f = open(decoded_file, "w")
+    decoded_output= base64.b64decode(input_file) 
+    base64decoded_file = f.write(decoded_output.decode())#decode the byte outbut from Base64 decoding
+    f.close()
 
 if __name__ == "__main__":
     main()
