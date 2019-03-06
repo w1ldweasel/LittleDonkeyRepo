@@ -7,6 +7,8 @@ Created on Sat Feb 23 22:19:13 2019
 
 from cryptography.fernet import Fernet
 import base64
+from os import path
+
 
 def main(): 
     
@@ -53,23 +55,38 @@ def generate_key():
 def encrypt_file():
     keyfile = input("Enter key filename to retrieve key >") 
     source_file = input("Enter filename to encrypt contents, including extension >") 
-    
-    f = open(keyfile, "rb")
-    key = f.read()
-    f.close()
-    
-    f = open(source_file, "r")
-    message = f.read()
-    f.close()
-    
-    encoded_message = message.encode()
-    cipher = Fernet(key)
-    cipher_text = cipher.encrypt(encoded_message)
-    #print (cipher_text) #Use to check the ciphertext
-    
-    f = open(source_file, "wb")
-    f.write(cipher_text)
-    f.close()
+    valid_files = True
+    if path.exists(keyfile):
+        invalid_keyfile = ""
+    else:
+        invalid_keyfile = "The key file name is invalid"
+        valid_files = False
+   
+    if path.exists(source_file):
+        invalid_sourcefile = ""
+    else:
+        invalid_sourcefile = "The input file name is invalid"
+        valid_files = False
+        
+    if valid_files == False:
+        print (invalid_keyfile, invalid_sourcefile)
+    else:
+        f = open(keyfile, "rb")
+        key = f.read()
+        f.close()
+        
+        f = open(source_file, "r")
+        message = f.read()
+        f.close()
+        
+        encoded_message = message.encode()
+        cipher = Fernet(key)
+        cipher_text = cipher.encrypt(encoded_message)
+        #print (cipher_text) #Use to check the ciphertext
+        
+        f = open(source_file, "wb")
+        f.write(cipher_text)
+        f.close()
 
 
 def decrypt_file():
