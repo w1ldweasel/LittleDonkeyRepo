@@ -53,7 +53,14 @@ def getddob():
     return DOB
     
     
-    
+# =============================================================================
+# DT = datetime.datetime
+# 
+# CURRENTYEAR = DT.now().year
+# DELTA = DT(CURRENTYEAR, 12, 25) - DT.now()
+# 
+# if DT.now() >= DT(CURRENTYEAR, 12, 25):    
+# =============================================================================
     
 
 DELTA = DOB() - DT.today()
