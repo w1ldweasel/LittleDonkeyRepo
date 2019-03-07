@@ -1,1 +1,80 @@
-gAAAAABcfHTrV-HUUn6TxuhWd4iuG8jKAdhBgzKDWAInNypT_rfrWw0OURgzKpBClzMmaeHHErFFMRTtZX1B76iXAPeYK-lsDj5jICejwKodf7_DQdTNplLH1-FH9pLqua7UaTSdj0YKRU1BkSEiMM6uw3RwtJH_MOUNI-FpR7OlMzFPfrN3QkzxCo0yi3t1vKW4vP0rf1SVTIEWMxVUcBR6-BtjhbEy_ESb1kswn7tnpUqqscn_zpDV78WhVunk9EmS5h0zYi8n12e6ZES4fBER724ohkbDm7JSh5oPxJf6CavuN3f1Noyp4fAzhxzeDOSskYgOu62euC9SpefthgjzI32d8G_9MwVhIu7aVCmcYfivk6RqIrhWVr_PdrGHkrva6wkQ4PuXRwMMW2qAsDEzia6o4mI8B7_O0K1FgU3glZfrx2PENC3L6mfz_kwf2rWjHR0tpFM3YPjRT9HVUTreOmwmMQraBbmnoSjbcV9w-Z3gjMyN_6lLB5LjHhtEgpJ0XCNkuTG1PBsglcIhfkJX5vBxhsv1YKW1u1HmxOIn_uS7I75FPHSkMPG97VdfeuHdvq0Y2M5YlW6q8SusbOSuiTTlASI6cmL5zNKyZd3D2vQBLmzzm3lklh_5dK1tjV-2wLnHI8rIl6gf5WhiCGTsbl66fTDih_8AbEU9ZBBO0TEAZBdTJmgkMyykf7OawhTYLW7kXrmPrGCksUvpupA3nyfm653uunVKqr7XtZ4HJ7d7R-tS4ZrS5hUkFypTLmMyKcvYo5EWmR8Iqachf4EuYHK-5eLqG9a8uHOhkXStsLK0-AVNNd5oj0WdgTbqm76i9QbVV15hqBFsKJt_XoD9Te3LbI1ElXXSbmhVa-A2SULXBoI_evPEIRMniJ_9miqj_i3J5Iahy0GreS5wPHHHl6UY3Jr-C8gHI2STsQlKJvoQobvvKyaDFHmutDRE97s4TKH3mXvIqkiR7OJ1IaGnqpfrBlXLW2RB_VwcKb8E3AA80yxbK6uSobL0idubeqYQxZWWJ6Uu_TCGWdW9nQ7LuGCAOgN-kgnP4EotLiOPPN-93rgiYVcuf3KI5T-Qadt6q5jgc0dtVbluzIGCQGN1I2BhXOeUjmqQJ9ZnpehzqLrG1swuGqwdIcuBeoy1f6VggWIst-5aCfGX30uksvo2k8WNJ1Om8PR9iVm-pha_Qen-lnxu1z7-Yt5kNX7tCTOknyIspQdSBN50sD8BbVtK9m1LFrIptaOYhFgrP6My7TFW9KEJ6k8G0eEn8osvMGIOCjYkhd_sDU3Ecvj2QpHvZD36_9MswMiby5XSascn-ncpn40yVKxO_pCm9bSayQq3vHsp1IaGw3Kx-5wodtQNq94WpWIiiovmijhkYtTc67LsfTlCb0i4lOzpdNCM_NyfpnZoFegIfeIURStOKse1IZX-wvda-YPdcpnI7mpT1KRIR9u_gHi51LipJ6n3-MdEv-9teDC_D7wXf55BSIbsbhvNlrt5wwOPGyuCZ0wmOKqU0YzTvtsPOqKiR5KaaYkCtPgktNKF5e5_fzfW7VTCN4MAZD1qASYhiP-9UUODm6l-whTBWQHAKe-CBbMM1yZxiHI6H9HhA_lXc-XpxDStRtDJlRkX7Zzx61O5W6wE-JODEh_I0rnr48Bn1DKbK3WcWU6uVURduFis61zF9atmBQ3zc-r6mtMU3dJg0w0qMsy_Psnf_CWDkFPsv7B2SPkUAI_PyduU-Q67wIThDQN9ia7FiNcJHzpy_2tUFsBa1zViBEBVwDE_20ZVk5IPI-vhoTwz2N_g2_76r42Fy8Rcu4oQZlVMiSZXwZbaZ6g2RiaXxWBrXIJfh_y12nARnRuNPhCXH2Ny1wmQXrA0bdh_PKihOrrdZSKQ0DL5P_4WgNoDnh6Y1LqFt9ugb4dqfQsGjnpHD2XVST6j1o4wePg70p3AJt1B7yqTeVbgVrtg7eC8nP8HWq-TFznoE1JYKNV6-wivkk_so1zxGdhRvXvuHSbhVqDqOdL8xBEo3ykT7juN1t_DTa96WKqgIlBtiUbZt-_7W1i2wP6JfM7zrmXHyR5pL-liYs0yb4qIl-udib7sJw3yCWl4_TYX9hJ5SA7t4xjb0Y8Xbs-9D4D0vy3n5V0H9C4vVQOPmkbPDoNGMamhgd966kbCWHBB_40lmnGV8ljhQTf27wVYwLLQyPiw0-0dLSp89F3jTIvIzTjmDHxd4br15JpAGR974shz8uqwQwS-sqkXYWHdUqMfswScwUdeIG1dqk0wtz2R8g4xaWatNal1U-xKhU2t06_o_GQcmGDHIVW-ssdrNW3P9zkQ40gc3A515IdKOwgkRDaOIZOa8NiaTLrrjy4K25FsaBgutvnziUCj5_3RwRpK0eOeoXYRuC9FI9IGWzurs42ssSbIs9WCyGlwggvIWVfJ-TdtIl9nQZ5484BDJgAGVQbboYc2ep5MA5ORRiqWaIZEbs4fTQufcC1KdRZIheKWe9Joz56sYSITfSR7JfUjLQi788rCzcysN4hMNqXvq_y0_rB7Qcl9XMl-MMfPjR0y5tgw8ds6JcXwabTtAIf7exNTB0NBM0HRK6WZ5DLLwL3yWvAeRIJkkMWxDqGwHy67VpnDrxlfgcTjQzCM2S8msU3Erkty9D_d_YDCFuDp0zKQJWHrKSIDgO2QHDPq9i2eqGUooMitX4n7q4VWtuAyKOXkB7Lilb0d4wvkM0r7ausyOk9AQ8VvWlKzSZ4Z9G274RE8jV3IzSXZ6SMTupGiuWOdgR9euqesys4jW7TF7y8JHlmb4CJpITf9VkIDa2QLX9yOk24kll3b6u0-UESMzILAf241O7v_nbKJSLb6BRLwNm6dGHuqvVBCAn9bmV8zRfO0DmmWQo5F-pobS0mGPKaUex9fp_K12iWD21XRAfwSjRfXg8N7RnPfr7NtDzuGdQo5IyPOTVY6X_2SFPPT5PUVsRoYghtcF_M0Yx6LCLpkHEYo5XgUhw3DkEWVDp0H9rCW8DCfouzTbAf_j76L9-86m5WVpt_bM2EEgkQGHVG17JwU6wlUmEs=
+# ==== Code club
+# ==== Exercise 3
+# 
+##==== Written by Max Ng 
+##==== 20/01/2019
+#
+
+#
+import random
+from os import path
+
+# Intro message
+def askgamechoice():
+    game_choice = 'i' #set initial alue
+    while game_choice.lower() != 'q':
+        print('\n')        
+        print ("Which game would you like to play? Enter \'l\' for Lotto,\'e\' for Euromillions or \'q\' to quit the game.")
+        game_choice = input('Choice >')
+        if game_choice.lower() == 'l':
+            generate_lotto_numbers()
+        elif game_choice.lower() == 'e':
+            generate_euro_numbers()
+        elif game_choice.lower() == 'q':
+            break
+        else:
+            print('Illegal character, try again')
+    
+    print('\n')
+    print('Goodybye, thank you for playing')
+    
+# function that returns 6 random numbers
+def generate_lotto_numbers():
+    lotto_numbers = []
+    for i in range(6):
+#        print('in generate_lotto_numbers')
+        lotto_numbers = new_random_list(lotto_numbers, 59)
+        
+    print('These are your six numbers:')
+    lotto_numbers.sort()    
+    print(lotto_numbers)
+    save_file = input('Would you like to save these numbers? Please answer \"y\" to save. ')
+
+# function that returns 5 random main numbers and 2 'star' numbers
+def generate_euro_numbers():
+    euro_numbers = []
+    star_numbers = []
+    for i in range(5):
+        euro_numbers = new_random_list(euro_numbers,50)  
+    for i in range(2):
+        star_numbers = new_random_list(star_numbers,12)  
+
+    print('These are your five main numbers and two star numbers:')
+    euro_numbers.sort()
+    star_numbers.sort()                
+    print(euro_numbers)
+    print(star_numbers)
+    save_file = input('Would you like to save these numbers? Please answer \"y\" to save. ')
+
+def new_random_list(number_list_arg, number_range):
+    temp_list = number_list_arg
+#    print('in new_random_list')
+
+    current_list_size = len(temp_list)
+    flag = len(temp_list)
+#    print('flag = ', flag)
+    while flag == current_list_size:
+        new_number = random.randint(1, number_range)
+#            print('new random number')
+#            print(new_number)
+#        print(temp_list)
+        if new_number not in temp_list:
+            temp_list.append(new_number)
+            flag = flag+1
+#            print('append')
+#            print(temp_list)
+            return temp_list
+        
+#main()
+if __name__ == "__main__":
+  askgamechoice()
