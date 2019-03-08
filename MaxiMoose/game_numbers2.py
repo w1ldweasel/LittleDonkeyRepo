@@ -39,7 +39,10 @@ def generate_lotto_numbers():
     lotto_numbers.sort()    
     print(lotto_numbers)
     save_file = input('Would you like to save these numbers? Please answer \"y\" to save. ')
-
+    if save_file.lower() == 'y':
+        save_to_file('lotto_numbers.txt', main_game = lotto_numbers)
+    
+    
 # function that returns 5 random main numbers and 2 'star' numbers
 def generate_euro_numbers():
     euro_numbers = []
@@ -55,6 +58,9 @@ def generate_euro_numbers():
     print(euro_numbers)
     print(star_numbers)
     save_file = input('Would you like to save these numbers? Please answer \"y\" to save. ')
+    if save_file.lower() == 'y':
+        save_to_file('euro_numbers.txt', main_game = euro_numbers, stars = star_numbers, euromillion = True )
+        
 
 def new_random_list(number_list_arg, number_range):
     temp_list = number_list_arg
@@ -74,6 +80,19 @@ def new_random_list(number_list_arg, number_range):
 #            print('append')
 #            print(temp_list)
             return temp_list
+        
+def save_to_file(filename, main_game = [], stars = [], euromillion = False):
+    if path.exists(filename):
+        f = open(filename, 'a')
+        f.write('\n' + str(main_game))
+        if euromillion == True: 
+            f.write(' ' + str(stars))
+    else:
+        f = open(filename, 'w')
+        f.write(str(main_game))
+        if euromillion == True: 
+            f.write(' ' + str(stars))
+    f.close()
         
 #main()
 if __name__ == "__main__":
