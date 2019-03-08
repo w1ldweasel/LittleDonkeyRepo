@@ -8,6 +8,7 @@
 #
 import random
 from os import path
+from datetime import datetime
 
 # Intro message
 def askgamechoice():
@@ -84,7 +85,8 @@ def new_random_list(number_list_arg, number_range):
 def save_to_file(filename, main_game = [], stars = [], euromillion = False):
     if path.exists(filename):
         f = open(filename, 'a')
-        f.write('\n' + str(main_game))
+#        f.write('\n' + datetime.now().strftime("%d %B %Y") + ' ' + str(main_game))
+        f.write('\n' + datetime.now().strftime("%d/%m/%Y") + ' ' + str(main_game))
         if euromillion == True: 
             f.write(' ' + str(stars))
     else:
