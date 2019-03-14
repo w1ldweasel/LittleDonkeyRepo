@@ -4,13 +4,12 @@
 @author: Anieb
 """
 
-def menu():
-    
-    print("************MAIN MENU**************")
-    print("******Formula 1 Stats & Facts******")
-    
-    print()
-    
+#def menu():
+print("************MAIN MENU**************")
+print("******Formula 1 Stats & Facts******")
+print()
+
+#once the menu is displayed and a selection is made it should show the choice selected    
 choice = input("""
 A: Formula 1 World Champions
 B: Top Ten Pole Sitters
@@ -21,7 +20,7 @@ E: Quit
 Please enter your choice: """)
         
 
-        
+#this code will allow the user to use either a capital letter or lowercase to select a choice        
 if choice == "A" or choice =="a":
         print ("""  
                
