@@ -15,11 +15,25 @@ from dateutil.relativedelta import relativedelta
 def main():
     
     today = datetime.now()
-    
-    print('\n')  
     name = input('What is your name? :') 
-    dobinput = input('What is your Date of Birth? Enter in the format DD/MM/CCYY :') 
-    dob = datetime.strptime( dobinput, '%d/%m/%Y')  
+    valid_date = False
+    
+    while valid_date == False:
+        print('\n')  
+
+        dobinput = input('What is your Date of Birth? Enter in the format DD/MM/CCYY :') 
+        
+        try:
+            dob = datetime.strptime( dobinput, '%d/%m/%Y')  
+            valid_date = True
+        except ValueError:
+            print('Not a validate date format, please try again.')
+            valid_date = False
+        except:
+            print('Unexpected error')
+            valid_date = False
+            raise
+            
     
     age_years = relativedelta(today, dob).years
     
