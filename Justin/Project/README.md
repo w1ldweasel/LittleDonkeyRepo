@@ -6,3 +6,5 @@ The intention of this project is to take lists of common passwords, understand w
 
 For this, I'll be using the alleged-gmail-passwords.txt list availble from here:
 https://github.com/danielmiessler/SecLists/blob/master/Passwords/Leaked-Databases/alleged-gmail-passwords.txt
+
+The adobe 100 list is being used for development (much smaller dataset)
