@@ -1,0 +1,3 @@
+Just testing out basic GUI code and infused it with adding code to make a game of thrones generator just before the last season starts
+
+Whats your Game of Thrones name?
