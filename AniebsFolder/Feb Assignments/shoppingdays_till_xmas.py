@@ -12,15 +12,25 @@ dt = datetime.datetime
 
 currentyear = now.year
 
+delta1 = dt(currentyear, 12, 25) - now 
 delta = dt(currentyear, 12, 2) - now
-print ("current Date: " + now.strftime("%d - %b - %Y"))
 
-SavingTarget = input ("Please enter how much you would like to save £")
-SavingTargetConvert = int(SavingTarget) * 1
+xmas = int(delta1.days - delta.days)
+
+print ("Current Date: " + now.strftime("%d - %b - %Y"))
+
+while True:
+    try:
+        SavingTarget = input ("Please enter in pound sterling how much you would like to save £")
+        SavingTargetConvert = int(SavingTarget) * 1
+        break
+    except ValueError:
+        print ("Please Enter The Correct format")
+        
+
 print ("in order to save £" + SavingTarget + ' for Cyber monday') 
 
-MonthCalculation = (delta.days / 7 / 4)
-
+MonthCalculation = (round(delta.days / 7 / 4))
 
 MonthlySaving = (SavingTargetConvert / MonthCalculation)
 MonthlySavingAmount = float(MonthlySaving) *1
@@ -31,7 +41,7 @@ MonthCalculation = str(round(MonthCalculation, 2))
 SavingTargetConvert = str(round(SavingTargetConvert, 2))
 
 print ("You need to save £" + MonthlySavingAmount + " a month for the next " + MonthCalculation + " Months")
-print ("There are only",delta.days, 'days to Cyber Monday Get Saving to Reach Your Goal!!')
+print ("There are only",delta.days, 'days to Cyber Monday and a further' ,xmas, 'Days Till Xmas Get Saving To Reach Your Goal!!')
 
 """
 MN 

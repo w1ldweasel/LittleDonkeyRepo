@@ -17,7 +17,10 @@ def proceed_hwnumber2():
         try:
             askdob = input(name + ", please tell me your date of birth in the format DD/MM/YYYY: ")
             dob = datetime.strptime(askdob, "%d/%m/%Y").date()
-            break
+            if dob > date.today():
+                print ("You've not been born yet!")
+            else:
+                break
         except ValueError:
             print ("That's not the correct format!")
 
