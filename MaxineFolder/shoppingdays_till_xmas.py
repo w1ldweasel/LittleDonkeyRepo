@@ -5,7 +5,9 @@
 
 import datetime
 from datetime import date
+from decimal import *
 
+TWOPLACES = Decimal('0.01')
 
 def proceed_shopdays():
     
@@ -39,14 +41,19 @@ def proceed_shopdays():
 
     
     print (" ")
-    print ("If you would like to save £1000 for Christmas, you will need to save £", round(thisamount), " a month from now")
+    print ("If you would like to save £", exsave, " for Christmas, you will need to save £", round(thisamount), " a month from now")
 
    
 #user input
     while True:
         try:
-            usersave = int(input("How much do you need to save for Christmas in Pound Sterling?"))
-            break
+            asksave = input("How much do you need to save for Christmas in Pound Sterling?")
+            usersave = Decimal(asksave)
+#            if usersave != 2 or 1 or 0 decimal places / > 2 decimal places:
+            if usersave != :
+                print ("Please enter a valid Sterling amount i.e. 2 decimal places")
+            else:
+                break
         except ValueError:
             print ("That's not the correct format, please enter a number to save in Pounds" )
     
