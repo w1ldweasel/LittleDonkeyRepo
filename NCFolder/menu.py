@@ -8,12 +8,11 @@ Now creates menu from folder items...
 TO DO LIST
 1, need remove menu.py from displaying in menu list
 
-To get current scriptname -  os.path.basename(sys.argv[0])
+To get current scriptname use -  os.path.basename(sys.argv[0])
 
 """
 
 import time as t
-import sys
 import subprocess
 import os
 from os import listdir
@@ -33,10 +32,13 @@ def choice():
             print("So you want to leave...")
             t.sleep(1)
             quit("Bye Bye")
-        elif int(ANS_FILE) > COUNT:
-            print("\n")
-            print("Wrong selection.")
+        elif ANS_FILE.isdigit() != True:
+            wrongselection()
             continue
+        elif int(ANS_FILE) > COUNT:
+            wrongselection()
+            continue
+       
         PATH = FOLDER + "/" + FILE_NAMES[int(ANS_FILE)]
         print("\n")
         print("Selected file: %s " % PATH)
@@ -45,8 +47,13 @@ def choice():
         print("\n")
         choice()
 
+def wrongselection():
+    print("\n")
+    print("Wrong selection.")
+    choice()
+
 def runchoice(PATH):
-    subprocess.run(["python", PATH])
+    subprocess.run(['python', PATH])
 
 print("   ____                       __  __                  ")
 print("  / ___|__ _ _ __ _ __  ___  |  \/  | ___ _ __  _   _ ")
