@@ -7,50 +7,53 @@ By Max Ng
 """
 
 import matplotlib.pyplot as plt 
-from decimal import Decimal
+from decimal import *
 
 def main():
     get_values()
+    print('Bye')
 
 def get_values():
-    
-    inputs_valid = False
-    
-    while inputs_valid == False:    
+    do_not_continue = False
+    while do_not_continue == False:    
         try: 
-            x_value = input('Enter final x value: ') 
+            x_value = input('Enter final x value as an integer: ') 
             x_value = int(x_value)
     
-            m_value = input('Enter m value the line gradient: ')
+            m_value_input = input('Enter m value the line gradient: ')
             #m_value = int(m_value)
-            m_value = Decimal(m_value).quantize(Decimal('0.01'), rounding=ROUND_UP)
-            c_value = input('Enter c value, the intersection with y: ')
+            m_value = Decimal(m_value_input).quantize(Decimal('0.01'), rounding=ROUND_UP)
             #c_value = int(c_value)
-            c_value = Decimal(c_value).quantize(Decimal('0.01'), rounding=ROUND_UP)
-            
+            c_value_input = input('Enter c value, the intersection with y: ')
+            print(c_value_input)
+            c_value = Decimal(c_value_input).quantize(Decimal('0.01'), rounding=ROUND_UP)
+            print(c_value)
             x_list = list(range(x_value + 1))
             y_list = []
 #            for x in x_list:
 #                y_list.append(x * m_value)
 #            print (x_list)
-    
-            plot_graph(x_list, x_list)
-#            plt.plot(x_list, x_list, c_value)
-                
+            do_not_continue = True
+            plot_graph(x_list, x_list, 2)
+
+         
         except ValueError:
             print('Please enter x as an integer and valid numbers for m and c')
             user_reply = input('Do you want to continue (enter y to continue)?: ')
-            if user_reply.low() == 'y':
+            if user_reply.lower() == 'y':
                 main()
-            else: print('Bye')
-            
+            else: 
+                do_not_continue = True
+      
         except:
-            print('Problem processing input try again')
+            print('Problem processing input')
             user_reply = input('Do you want to continue (enter y to continue)?: ')
-            if user_reply.low() == 'y':
+            if user_reply.lower() == 'y':
                 main()
-            else: print('Bye')
+            else: 
+                do_not_continue = True
 
+        
 def plot_graph(x_values, y_values, c_value):
     # plotting the points  
     plt.plot(x_values, y_values, color='green', linestyle='dashed', linewidth = 3, 
