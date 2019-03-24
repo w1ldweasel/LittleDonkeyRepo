@@ -30,11 +30,12 @@ def get_values():
             print(c_value)
             x_list = list(range(x_value + 1))
             y_list = []
-#            for x in x_list:
-#                y_list.append(x * m_value)
-#            print (x_list)
+            for x in x_list:
+                y_list.append(x * m_value)
+            print (x_list)
             do_not_continue = True
-            plot_graph(x_list, x_list, 2)
+            
+            plot_graph(x_list, y_list, c_value)
 
          
         except ValueError:
