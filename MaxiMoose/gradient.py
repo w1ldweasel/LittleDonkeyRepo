@@ -39,11 +39,17 @@ def get_values():
                 
         except ValueError:
             print('Please enter x as an integer and valid numbers for m and c')
-            main()
+            user_reply = input('Do you want to continue (enter y to continue)?: ')
+            if user_reply.low() == 'y':
+                main()
+            else: print('Bye')
             
         except:
             print('Problem processing input try again')
-            main()
+            user_reply = input('Do you want to continue (enter y to continue)?: ')
+            if user_reply.low() == 'y':
+                main()
+            else: print('Bye')
 
 def plot_graph(x_values, y_values, c_value):
     # plotting the points  
