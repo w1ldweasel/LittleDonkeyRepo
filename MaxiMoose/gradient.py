@@ -7,11 +7,11 @@ By Max Ng
 """
 
 import matplotlib.pyplot as plt 
-from decimal import *
+from decimal import Decimal
 
 def main():
     get_values()
-    print('Bye')
+    print('End')
 
 def get_values():
     do_not_continue = False
@@ -21,22 +21,23 @@ def get_values():
             x_value = int(x_value)
     
             m_value_input = input('Enter m value the line gradient: ')
-            #m_value = int(m_value)
             m_value = Decimal(m_value_input).quantize(Decimal('0.01'), rounding=ROUND_UP)
-            #c_value = int(c_value)
             c_value_input = input('Enter c value, the intersection with y: ')
-            print(c_value_input)
             c_value = Decimal(c_value_input).quantize(Decimal('0.01'), rounding=ROUND_UP)
-            print(c_value)
             x_list = list(range(x_value + 1))
-            y_list = []
+            x_axis = []
+            y_axis = []
             for x in x_list:
-                y_list.append(x * m_value)
-            print (x_list)
+                x_decimalised = Decimal(x)
+                y = (x_decimalised * m_value + c_value)
+                xval = float(x)
+                yval = float(y)
+                x_axis.append(xval)
+                y_axis.append(yval)
+#            print (x_axis)
+#            print (y_axis)
             do_not_continue = True
-            
-            plot_graph(x_list, y_list, c_value)
-
+            plot_graph(x_axis, y_axis)
          
         except ValueError:
             print('Please enter x as an integer and valid numbers for m and c')
@@ -55,17 +56,15 @@ def get_values():
                 do_not_continue = True
 
         
-def plot_graph(x_values, y_values, c_value):
+def plot_graph(x_values, y_values):
     # plotting the points  
-    plt.plot(x_values, y_values, color='green', linestyle='dashed', linewidth = 3, 
-    marker='o', markerfacecolor='blue', markersize=12) 
+    plt.plot(x_values, y_values, color='green', linestyle='solid', linewidth = 1, 
+    marker='o', markerfacecolor='red', markersize=6) 
     # naming the x axis 
     plt.xlabel('x - axis') 
     # naming the y axis 
     plt.ylabel('y - axis') 
-  
     plt.title('Line Gradient') 
-  
     plt.show() 
 
 
