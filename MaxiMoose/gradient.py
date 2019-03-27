@@ -7,7 +7,7 @@ By Max Ng
 """
 
 import matplotlib.pyplot as plt 
-from decimal import Decimal
+from decimal import *
 
 def main():
     get_values()
