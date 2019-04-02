@@ -4,6 +4,7 @@ Spyder Editor
 
 Program to calculate gradient of line from user input.
 By Max Ng
+written March 2019
 """
 
 import matplotlib.pyplot as plt 
