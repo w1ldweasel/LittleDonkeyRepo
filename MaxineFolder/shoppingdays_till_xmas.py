@@ -50,7 +50,7 @@ def proceed_shopdays():
             asksave = input("How much do you need to save for Christmas in Pound Sterling?")
             usersave = Decimal(asksave)
 #            if usersave != 2 or 1 or 0 decimal places / > 2 decimal places:
-            if usersave != :
+            if decimal.Inexact = true:
                 print ("Please enter a valid Sterling amount i.e. 2 decimal places")
             else:
                 break
