@@ -1,6 +1,9 @@
 import tkinter as tk
 import sys
 import random
+import smtplib
+import config
+import sqlite3 as lite
 #import Tkinter
 #from tkinter import * 
 
@@ -54,129 +57,83 @@ class Application(tk.Frame):
         
     def F1_History(self):
           
-       print ("""
-               
-Formula One is the highest class of single-seater auto racing sanctioned 
-by the Fédération Internationale de l'Automobile and owned by the Formula One Group. 
-The FIA Formula One World Championship has been one of the premier forms of racing 
-                                         around the world since its inaugural season in 1950. 
-Current champion: Lewis Hamilton 
-Drivers: 20
-Drivers' champion: Lewis Hamilton; (5th title)
-Constructors' champion: Mercedes; (5th title)
-Did you know: Formula One ranks 10th among professional sports leagues in the world by revenue (1,830 € million)               
+        con = lite.connect('Formula1app.db')
         
-        """)
+        with con:
+        
+            cur = con.cursor()
+            cur.execute("SELECT * FROM f1History")
+        
+            rows = cur.fetchall()
+        
+            for row in rows:
+                print (row)      
+            
        
     def F1_WorldChamp(self):
             
-            print ("""  
-                   
-    FORMULA 1 WORLD CHAMPIONS
-              
-    7 World Titles 
-    Michael Schumacher 
-                       
-    5 World Titles
-    Juan Manuel Fangio
-    Lewis Hamilton (Current World Champion)
-                      
-    4 World Titles
-    Alain Prost
-    Sebastian Vettel
-                      
-    3 World Titles
-    Jack Brabham
-    Jackie Stewart-
-    Niki Lauda
-    Nelson Piquet
-    Ayrton Senna
-                      
-    2 World Titles
-    Alberto Ascari
-    Jim Clark
-    Graham Hill
-    Emerson Fittipaldi
-    Mika Hakkinen
-    Fernando Alonso
-                      
-    1 World Titles
-    Nino Farina
-    Mike Hawthorn
-    Phil Hill
-    John Surtees
-    Denny Hulme
-    Jochen Rindt
-    James Hunt
-    Mario Andretti
-    Jody Scheckter
-    Alan Jones
-    Keke Rosberg
-    Nigel Mansell
-    Damon Hill
-    Jaques Villeneuve
-    Kimi Raikkonen
-    Jenson Button
-    Nico Rosberg 
-    
-    
-    """)
+        con = lite.connect('Formula1app.db')
+        
+        with con:
+        
+            cur = con.cursor()
+            cur.execute("SELECT * FROM driverschampions")
+        
+            rows = cur.fetchall()
+        
+            for row in rows:
+                print (row)      
+            
             
     def F1_Pole(self):
-            print("""
-                  
-        ****Top 10 Pole Sitters****
-                  
-        1- Lewis Hamilton        84
-        2- Michael Schumacher    68
-        3- Aryton Senna          65
-        4- Sebastian Vettel      55
-        5- Jim Clark             33
-        5- Alain Prost           33
-        7- Nigel Mansell         32
-        8- Nico Rosberg          30
-        9- Juan Manuel Fangio    29
-        10- Mika Hakkinen        26
-                  
-                  """)
-    def Questions_F1(self):
+           
+        con = lite.connect('Formula1app.db')
         
-#        while True:
-#            try:
+        with con:
+        
+            cur = con.cursor()
+            cur.execute("SELECT * FROM polepositions")
+        
+            rows = cur.fetchall()
+        
+            for row in rows:
+                print (row)      
+            
+                 
+    def Questions_F1(self):
+    
+
+            try:
                 question = input ("Please enter your Question and your email address") 
                 text_file = open("Q&A.txt", "a+")
                 text_file.write("Question: %s, \n" %(question))
                 text_file.close()
                 print ('your question has been submitted please allow 24 hours for a reply')
-#                break
-#            except ValueError:
-#                print ("That isn't the correct format please try again")
-#                
+                server = smtplib.SMTP('smtp.gmail.com', 587)
+                server.starttls()
+                server.login(config.EMAIL_ADDRESS, config.PASSWORD)
+                message = "subject: {}\n\n{}" .format(self)
+                server.sendmail(config.EMAIL_ADDRESS, config.EMAIL_ADDRESS, message)
+                server.quit()
+                print ("Email sent successfully")
+            except:
+                print ("Email failed to send")
+                
+
     def Constructors(self):
-          print("""
+        con = lite.connect('Formula1app.db')
         
-        *** FORMULA 1 CONSTRUCTORS WORLD CHAMPIONS ***
-               CONSTRUCTOR | NUMBER OF TITLES
-                FERRARI    |         16
-                WILLIAMS   |         9
-                McLAREN    |         8
-                LOTUS      |         7
-                MERCEDES   |         5
-                RED BULL   |         4
-                COOPER     |         2
-                BRABHAM    |         2
-                RENAULT    |         2
-                VANWALL    |         1
-                BRM        |         1
-                MATRA      |         1
-                TYRRELL    |         1
-                BENETTON   |         1
-                BRAWN      |         1
-               
-               
-                  
-            """)
-           
+        with con:
+        
+            cur = con.cursor()
+            cur.execute("SELECT * FROM ConstructorsChampions")
+        
+            rows = cur.fetchall()
+        
+            for row in rows:
+                print (row)      
+            
+         
     def Generate_Fact(self):
             fun_facts = random.choice(self.facts)
             message = random.choice(self.comment)
