@@ -8,9 +8,6 @@ Created on Tue Apr 16 20:38:25 2019
 
 import json
 import urllib.request
-import firebase_admin
-from firebase_admin import credentials
-from firebase_admin import firestore
 from google.cloud import firestore
 
 
@@ -47,10 +44,7 @@ def printResults(data):
         
 #write data to database
 def writedata():
-#*** NEED TO FIGURE OUT INITIALIZE / AUTHORISE STEP ***
-    cred = credentials.ApplicationDefault()
-    firebase_admin.initialize_app(cred, {'football-data-python-project': project_id,})
-    
+#*** NEED TO FIGURE OUT AUTHORISE STEP ?? ***
     db = firestore.Client()
     doc_ref = db.collection(u'test').document(u'thisisatest')
     doc_ref.set({
