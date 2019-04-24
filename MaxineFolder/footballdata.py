@@ -9,6 +9,9 @@ Created on Tue Apr 16 20:38:25 2019
 import json
 import urllib.request
 from google.cloud import firestore
+from firebase_admin import firestore
+import firebase_admin
+from firebase_admin import credentials
 
 
 #function to set up API call and get data
@@ -41,17 +44,21 @@ def printResults(data):
     for i in theJSON:
         print (i["match_hometeam_name"])
         
+    writedata()
+        
         
 #write data to database
 def writedata():
-#*** NEED TO FIGURE OUT AUTHORISE STEP ?? ***
+#*** NEED TO FIGURE OUT AUTHORISE STEP ?? works in initdbase but not here ? ***  
+    GOOGLE_APPLICATION_CREDENTIALS="/Users/maxinemcfarlane/Downloads/football-data-python-project-firebase-adminsdk-wezap-6cc791b86b.json"
     db = firestore.Client()
     doc_ref = db.collection(u'test').document(u'thisisatest')
-    doc_ref.set({
-        u'testname': u'Max',
-        u'testteam': u'Hibs',
+    doc_ref.update({
+        u'testname': u'Max2',
+        u'testteam': u'Celtic',
         u'points': 80
     })
+    print("this has worked")
         
                 
         
