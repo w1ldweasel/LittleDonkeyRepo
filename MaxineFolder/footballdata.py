@@ -32,7 +32,7 @@ def main():
 def printResults(data):
     theJSON = json.loads(data)
     
-    # * if the value occurs once, do theis
+    # * if the value occurs once, do this
     if "match_hometeam_name" in theJSON:
         print (theJSON["match_hometeam_name"])
     else:
