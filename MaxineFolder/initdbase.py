@@ -14,7 +14,7 @@ from firebase_admin import credentials
 from firebase_admin import firestore
 
 
-#cred = credentials.Certificate("/Users/maxinemcfarlane/Downloads/football-data-python-project-firebase-adminsdk-wezap-6cc791b86b.json")
+#cred = credentials.Certificate("/Users/maxinemcfarlane/Downloads/APIkey1.json")
 #default_app = firebase_admin.initialize_app(cred)
 
     
