@@ -10,7 +10,7 @@ from google.cloud import firestore
 import os
 
 #default_app = firebase_admin.initialize_app()
-os.environ["GOOGLE_APPLICATION_CREDENTIALS"]="/Users/maxinemcfarlane/Downloads/APIkey1.json"
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"]="APIkey1.json"
 
 #get data from database
 def getdata():

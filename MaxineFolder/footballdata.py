@@ -7,25 +7,24 @@ Created on Tue Apr 16 20:38:25 2019
 """
 
 import json
-import urllib.request
+import requests
 from google.cloud import firestore
 import os
 import config
 
-
 #function to set up API call and get data
-#*** LOOK AT CHANGING THIS FROM URLLIB.REQUEST TO REQUESTS (BETTER FOR API)*** 
+#***CHANGE THIS FROM URLLIB.REQUEST TO REQUESTS (BETTER FOR API)*** 
 def main():
     
     sdate = '2019-03-15'
     edate = '2019-03-17'
     key = config.footballkey
     
-    footieurl = ('https://apifootball.com/api/?action=get_events&from=%s&to=%s&league_id=63&APIkey=%s' %(sdate, edate, key))
+    footieapi = ('https://apifootball.com/api/?action=get_events&from=%s&to=%s&league_id=63&APIkey=%s' %(sdate, edate, key))
   
-    webUrl = urllib.request.urlopen(footieurl)
-    if (webUrl.getcode() == 200):
-        data = webUrl.read()
+    r = requests.get(footieapi)
+    if (r.status_code == 200):
+        data = r.text
         printResults(data)
     else:
         print("Error getting football information.")
@@ -35,13 +34,13 @@ def main():
 def printResults(data):
     theJSON = json.loads(data)
     
-    # * if the value occurs once, do this
+    #if the value occurs once, do this
     if "match_hometeam_name" in theJSON:
         print (theJSON["match_hometeam_name"])
     else:
         print ('???')
      
-    # * if there are multiple occurences of the value (i.e. a range), do this
+    #if there are multiple occurences of the value (i.e. a range), do this
     for i in theJSON:
         print (i["match_hometeam_name"])
         
