@@ -12,8 +12,8 @@ from google.cloud import firestore
 import os
 import config
 
+
 #function to set up API call and get data
-#***CHANGE THIS FROM URLLIB.REQUEST TO REQUESTS (BETTER FOR API)*** 
 def main():
     
     sdate = '2019-03-15'
@@ -43,28 +43,20 @@ def printResults(data):
     #if there are multiple occurences of the value (i.e. a range), do this
     for i in theJSON:
         print (i["match_hometeam_name"])
-        
-        
-    writedata()
+        hometeamname = (i["match_hometeam_name"]) 
+        hometeamscore = (i["match_hometeam_score"])
+        writedata(hometeamname, hometeamscore)
         
         
 #write data to database
-def writedata():
-    
+def writedata(hometeamname, hometeamscore):
+       
     os.environ["GOOGLE_APPLICATION_CREDENTIALS"]="APIkey1.json"
     
     db = firestore.Client()
-    doc_ref = db.collection(u'test').document(u'testingmultipleentries')
+    doc_ref = db.collection(u'footballtest').document(hometeamname)
     doc_ref.set({
-        u'testname': u'Klopp',
-        u'testteam': u'Liverpool',
-        u'points': 50
-#        u'testname': u'Pep',
-#        u'testteam': u'Man City',
-#        u'points': 55,
-#        u'testname': u'Silva',
-#        u'testteam': u'Everton',
-#        u'points': 30
+        u'goals': hometeamscore
     })
     print("this has worked")
         
