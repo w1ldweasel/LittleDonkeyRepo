@@ -46,17 +46,19 @@ def printResults(data):
         hometeamname = (i["match_hometeam_name"]) 
         hometeamscore = (i["match_hometeam_score"])
         writedata(hometeamname, hometeamscore)
-        
+
         
 #write data to database
-def writedata(hometeamname, hometeamscore):
+def writedata(team, score):
        
     os.environ["GOOGLE_APPLICATION_CREDENTIALS"]="APIkey1.json"
     
     db = firestore.Client()
-    doc_ref = db.collection(u'footballtest').document(hometeamname)
+    doc_ref = db.collection(u'footballtest').document(team)
+    
+    #***NEED TO CHANGE THIS TO .UPDATE AFTER FIRST RUN, AS SET OVERWRITES DATA***
     doc_ref.set({
-        u'goals': hometeamscore
+        u'goals': score
     })
     print("this has worked")
         
