@@ -16,34 +16,45 @@ os.environ["GOOGLE_APPLICATION_CREDENTIALS"]="APIkey1.json"
 def getdata():
     db = firestore.Client()
 
-    test_ref = db.collection(u'test')
-    docs = test_ref.get()
+    #to get all documents in a collection, do this
+    getdoc_ref = db.collection(u'footballtest')
+    docs = getdoc_ref.stream()
+    #getdoc_ref.get > get is depricated
 
     for doc in docs:
         print(u'{} => {}'.format(doc.id, doc.to_dict()))
+        
+    #to get a specific document in a collection, do this
+    getdoc2_ref = db.collection(u'footballtest').document(u'Hull City')
+
+    doc = getdoc2_ref.get()
+    print(u'Team info: {} {}'.format(doc.id, doc.to_dict()))
+    
+    procdata()
+ 
+
+#process the data
+#average score, how many wins/draws, trends
+def procdata():
     
 
-#process data
-#average score, how many wins/draws
+    
+    
+    
+#write processed data to database
+#THIS WILL WRITE TO A NEW COLLECTION OR MAYBE SAME DOCUMENT. 1 DOC PER TEAM? NOT DECIDED
 #*** TO BE UPDATED ***
-
-    
-    
-    
-#write data to database
-#THIS WILL WRITE TO A NEW COLLECTION
-#*** TO BE UPDATED ***
-def writedata():
-
-    db = firestore.Client()
-    doc_ref = db.collection(u'test').document(u'thisisafinaltest')
-    doc_ref.set({
-        u'testname': u'Max4',
-        u'testteam': u'Man City',
-        u'points': 80
-    })
-    print("this has worked")
+#def writedata():
+#
+#    db = firestore.Client()
+#    doc_ref = db.collection(u'test').document(u'thisisafinaltest')
+#    doc_ref.update({
+#        u'testname': u'Max4',
+#        u'testteam': u'Man City',
+#        u'points': 80
+#    })
+#    print("this has worked")
     
     
 if __name__ == "__main__":
-    getdata()
+  getdata()
