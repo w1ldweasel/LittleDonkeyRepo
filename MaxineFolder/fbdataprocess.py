@@ -17,25 +17,24 @@ def getdata():
     db = firestore.Client()
 
     #to get all documents in a collection, do this
-    getdoc_ref = db.collection(u'footballtest')
+    getdoc_ref = db.collection('footballtest')
     docs = getdoc_ref.stream()
-    #getdoc_ref.get > get is depricated
+    #getdoc_ref.get > get is depricated for collection, but not document
 
     for doc in docs:
-        print(u'{} => {}'.format(doc.id, doc.to_dict()))
+        print('{} => {}'.format(doc.id, doc.to_dict()))
         
     #to get a specific document in a collection, do this
-    getdoc2_ref = db.collection(u'footballtest').document(u'Hull City')
-
+    getdoc2_ref = db.collection('footballtest').document('Hull City')
     doc = getdoc2_ref.get()
-    print(u'Team info: {} {}'.format(doc.id, doc.to_dict()))
+    print('Team info: {} {}'.format(doc.id, doc.to_dict()))
     
-    procdata()
+ #   procdata()
  
 
 #process the data
 #average score, how many wins/draws, trends
-def procdata():
+#def procdata():
     
 
     
@@ -47,11 +46,11 @@ def procdata():
 #def writedata():
 #
 #    db = firestore.Client()
-#    doc_ref = db.collection(u'test').document(u'thisisafinaltest')
+#    doc_ref = db.collection('test').document('thisisafinaltest')
 #    doc_ref.update({
-#        u'testname': u'Max4',
-#        u'testteam': u'Man City',
-#        u'points': 80
+#        'testname': 'Max4',
+#        'testteam': 'Man City',
+#        'points': 80
 #    })
 #    print("this has worked")
     

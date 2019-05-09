@@ -20,11 +20,11 @@ from firebase_admin import firestore
     
 db = firestore.client()
 
-doc_ref = db.collection(u'test').document(u'thisisahibstest')
+doc_ref = db.collection('test').document('thisisahibstest')
 doc_ref.set({
-        u'testname': u'Max',
-        u'testteam': u'Hibs',
-        u'points': 200
+        'testname': 'Max',
+        'testteam': 'Hibs',
+        'points': 200
 })
 print ('this has worked')
     

@@ -54,11 +54,11 @@ def writedata(team, score):
     os.environ["GOOGLE_APPLICATION_CREDENTIALS"]="APIkey1.json"
     
     db = firestore.Client()
-    doc_ref = db.collection(u'footballtest').document(team)
+    doc_ref = db.collection('footballtest').document(team)
     
     #***NEED TO CHANGE THIS TO .UPDATE AFTER FIRST RUN, AS SET OVERWRITES DATA***
     doc_ref.set({
-        u'goals': score
+        'goals': score
     })
     print("this has worked")
         
