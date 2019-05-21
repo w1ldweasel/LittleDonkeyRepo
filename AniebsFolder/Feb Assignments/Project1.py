@@ -31,8 +31,6 @@ class Application(tk.Frame):
         self.master.maxsize(800,800)
 
     def create_widgets(self):
-#        self.facts = ('The standard F1 car comprises of about 80,000 components. Each car needs to be built with 100% accuracy ─ obviously!', 'The minimum weight permissible of an F1 car is 1,500 lb including the driver.', 'The F1 driver loses approximately 8lb during a race. To help them hydrate, F1 cockpits have drinking bottles installed.', 'During a race, F1 drivers experience up to 5G under braking and 3G under acceleration. As a result, F1 drivers need to develop their neck muscles in order to endure G-forces.', 'There are around 500 rules and regulations that teams have to follow – on top of international sporting codes.', 'Temperatures in the cockpit can reach around 50 degrees celsius on race day.', 'A Formula 1 car’s engine can only last, on average, about seven races. Passenger car engines usually last around ten years.', 'A DRIVER CAN SURVIVE THE IMPACT OF 100 MPH TO STANDSTILL IN 2 SECONDS', 'The winner of the first World Championship in 1950 was Italian Giuseppe Farina in his Alfa Romeo', 'During a race, a driver loses up to 4kg (8.8 lbs) of weight from sweating in the heat of the cockpit. All cockpits have a water tank for drivers, which they drink from via a pipe.')
-#        self.comment = ('Amazing right?', 'What an Interesting fact!')  
        
         self.History = tk.Button(self)
         self.History["text"] = "What is Formula 1?"
