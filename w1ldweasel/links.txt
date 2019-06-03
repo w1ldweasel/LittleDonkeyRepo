@@ -1,0 +1,17 @@
+https://www.owasp.org/index.php/Source_Code_Analysis_Tools
+https://www.owasp.org/index.php/Testing_Checklist
+
+Read about the NIST framework (top left link 'Framework')
+https://www.nist.gov/cyberframework
+
+Have a look at B4 System security
+https://www.ncsc.gov.uk/guidance/table-view-principles-and-related-guidance
+
+https://www.ncsc.gov.uk/section/advice-guidance/all-topics?topics=Security%20architecture
+
+Read about what is a CWE and a CVE
+https://cwe.mitre.org/about/faq.html
+https://danielmiessler.com/blog/difference-cve-cwe/
+
+Using CVSS
+https://nvd.nist.gov/vuln-metrics/cvss
