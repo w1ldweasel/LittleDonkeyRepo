@@ -52,6 +52,18 @@ def printResults(data):
         elif (i["match_hometeam_score"]) == (i["match_awayteam_score"]):
             homeresult = "draw"
         writedata(hometeamname, hometeamscore, homeresult)
+        
+    for i in theJSON:
+        print (i["match_awayteam_name"])
+        awayteamname = (i["match_awayteam_name"]) 
+        awayteamscore = (i["match_awayteam_score"])
+        if (i["match_awayteam_score"]) > (i["match_hometeam_score"]):
+            awayresult = "win"
+        elif (i["match_awayteam_score"]) < (i["match_hometeam_score"]):
+            awayresult = "lose"
+        elif (i["match_awayteam_score"]) == (i["match_hometeam_score"]):
+            awayresult = "draw"
+        writedata(awayteamname, awayteamscore, awayresult)
 
         
 #write data to database
