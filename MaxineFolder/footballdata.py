@@ -45,11 +45,17 @@ def printResults(data):
         print (i["match_hometeam_name"])
         hometeamname = (i["match_hometeam_name"]) 
         hometeamscore = (i["match_hometeam_score"])
-        writedata(hometeamname, hometeamscore)
+        if (i["match_hometeam_score"]) > (i["match_awayteam_score"]):
+            homeresult = "win"
+        elif (i["match_hometeam_score"]) < (i["match_awayteam_score"]):
+            homeresult = "lose"
+        elif (i["match_hometeam_score"]) == (i["match_awayteam_score"]):
+            homeresult = "draw"
+        writedata(hometeamname, hometeamscore, homeresult)
 
         
 #write data to database
-def writedata(team, score):
+def writedata(team, score, result):
        
     os.environ["GOOGLE_APPLICATION_CREDENTIALS"]="APIkey1.json"
     
@@ -58,7 +64,8 @@ def writedata(team, score):
     
     #***NEED TO CHANGE THIS TO .UPDATE AFTER FIRST RUN, AS SET OVERWRITES DATA***
     doc_ref.set({
-        'goals': score
+        'goals': score,
+        'result': result
     })
     print("this has worked")
         
