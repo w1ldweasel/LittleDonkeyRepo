@@ -8,7 +8,6 @@ Created on Wed Apr 24 15:52:48 2019
 
 from google.cloud import firestore
 import os
-#
 
 #default_app = firebase_admin.initialize_app()
 os.environ["GOOGLE_APPLICATION_CREDENTIALS"]="APIkey1.json"
@@ -19,7 +18,7 @@ def main():
     #*currently input in this program > FIND OUT HOW TO RECIEVE INPUT FROM MN UI?*
     teamreq = 'm'
     print('\n\n')
-    print("Team ID\'s are as follows")
+    print("Team ID\'s are as follows:")
     print("Barnsley => 2652")
     print("Birmingham => 2631")
     print("Blackburn => 2680")
@@ -76,26 +75,26 @@ def getdata(teamid):
     getdoc2_ref = db.collection('footballtest').document(teamid)
     doc = getdoc2_ref.get()
 #    print('Team info: {} {}'.format(doc.id, doc.to_dict()))
-    maxtest = doc.to_dict()
-#    print(maxtest)
-    if maxtest == None:
+    teamdata = doc.to_dict()
+#    print(teamdata)
+    if teamdata == None:
         print("That's not a recognised Team ID")
     else:
-        predresult = maxtest.get("result")
-        teamname = maxtest.get("team name")
+        predresult = teamdata.get("result")
+        teamname = teamdata.get("team name")
     
         if predresult == "win":
             print('\n\n')
-            print(teamname, " are predicted to win their next match") 
+            print(teamname, " are predicted to win their next match.") 
         elif predresult == "draw":
             print('\n\n')
-            print(teamname, " are predicted to draw their next match")
+            print(teamname, " are predicted to draw their next match.")
         elif predresult == "lose":
             print('\n\n')
-            print(teamname, " are predicted to lose their next match") 
+            print(teamname, " are predicted to lose their next match.") 
         else:
             print('\n\n')
-            print(teamname, "We have no data on ")
+            print("We have no data on ", teamname, " .")
  
 # ADD MORE VARIABLES AND ADD WEIGHTING
       
