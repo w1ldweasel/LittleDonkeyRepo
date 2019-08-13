@@ -85,8 +85,6 @@ def writedata(teamid, team, score, result):
         'result': result
     })
     print("this has worked")
-    
-#ServiceUnavailable: 503 Connect Failed > investigating error.
         
                 
         

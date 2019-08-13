@@ -8,12 +8,33 @@ Created on Wed Apr 24 15:52:48 2019
 
 from google.cloud import firestore
 import os
+#
 
 #default_app = firebase_admin.initialize_app()
 os.environ["GOOGLE_APPLICATION_CREDENTIALS"]="APIkey1.json"
 
+
+def main():
+    #find out the team in question from the user (2468)
+    #*currently input in this program > FIND OUT HOW TO RECIEVE INPUT FROM MN UI?*
+    teamreq = 'm'
+    while teamreq != 'Q':
+        print('\n\n')
+        print("Which EFL team do you want to know the next match result for? Please enter TeamID.")
+        print("Enter 'Q' to quit.")
+        teamreq = input("Enter Team ID or quit request here: ")
+        
+        if teamreq == 'Q' or teamreq == 'q':
+            break
+            exit()
+        elif teamreq.isdigit():
+            getdata(teamreq)        
+        else:
+            print('That\'s not the correct format, please enter an EFL team ID')
+    
+ 
 #get data from database
-def getdata():
+def getdata(teamid):
     db = firestore.Client()
 
     #to get all documents in a collection, do this
@@ -25,35 +46,28 @@ def getdata():
         print('{} => {}'.format(doc.id, doc.to_dict()))
         
     #to get a specific document in a collection, do this
-    getdoc2_ref = db.collection('footballtest').document('Hull City')
+    getdoc2_ref = db.collection('footballtest').document(teamid)
     doc = getdoc2_ref.get()
     print('Team info: {} {}'.format(doc.id, doc.to_dict()))
+#WHAT TO DO WITH DICT TO BE ABLE TO REF?!
+    testingthis = doc.to_dict()
+    testingthis['goals']
+        
     
- #   procdata()
+#    if result == "win":
+ #       print (teamreq, " are predicted to win their next match")
+  #  elif result == "draw":
+#        print (teamreq, " are predicted to drae their next match")
+ #   elif result == "lose":
+  #      print (teamreq, " are predicted to lose their next match") 
+#    else:
+ #       print ("We have no data on ", teamreq)
  
-
-#process the data
-#average score, how many wins/draws, trends
-#def procdata():
-    
-
-    
-    
-    
-#write processed data to database
-#THIS WILL WRITE TO A NEW COLLECTION OR MAYBE SAME DOCUMENT. 1 DOC PER TEAM? NOT DECIDED
-#*** TO BE UPDATED ***
-#def writedata():
-#
-#    db = firestore.Client()
-#    doc_ref = db.collection('test').document('thisisafinaltest')
-#    doc_ref.update({
-#        'testname': 'Max4',
-#        'testteam': 'Man City',
-#        'points': 80
-#    })
-#    print("this has worked")
+# JULY UPDATES
+# IF WON LAST GAME, WILL WIN, ETC.
+# ADD MORE VARIABLES AND ADD WEIGHTING
+      
     
     
 if __name__ == "__main__":
-  getdata()
+  main()
