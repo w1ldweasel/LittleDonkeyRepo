@@ -16,12 +16,13 @@ import config
 #function to set up API call and get data
 def main():
     
-    sdate = '2019-03-15'
-    edate = '2019-03-17'
+    sdate = '2019-08-10'
+    edate = '2019-08-10'
     key = config.footballkey
     
-    footieapi = ('https://apifootball.com/api/?action=get_events&from=%s&to=%s&league_id=63&APIkey=%s' %(sdate, edate, key))
-  
+    footieapi = ('https://apiv2.apifootball.com/?action=get_events&from=%s&to=%s&league_id=149&APIkey=%s' %(sdate, edate, key))
+
+
     r = requests.get(footieapi)
     if (r.status_code == 200):
         data = r.text
@@ -43,6 +44,7 @@ def printResults(data):
     #if there are multiple occurences of the value (i.e. a range), do this
     for i in theJSON:
         print (i["match_hometeam_name"])
+        hometeamid = (i["match_hometeam_id"])
         hometeamname = (i["match_hometeam_name"]) 
         hometeamscore = (i["match_hometeam_score"])
         if (i["match_hometeam_score"]) > (i["match_awayteam_score"]):
@@ -51,10 +53,11 @@ def printResults(data):
             homeresult = "lose"
         elif (i["match_hometeam_score"]) == (i["match_awayteam_score"]):
             homeresult = "draw"
-        writedata(hometeamname, hometeamscore, homeresult)
+        writedata(hometeamid, hometeamname, hometeamscore, homeresult)
         
     for i in theJSON:
         print (i["match_awayteam_name"])
+        awayteamid = (i["match_awayteam_id"])
         awayteamname = (i["match_awayteam_name"]) 
         awayteamscore = (i["match_awayteam_score"])
         if (i["match_awayteam_score"]) > (i["match_hometeam_score"]):
@@ -63,23 +66,27 @@ def printResults(data):
             awayresult = "lose"
         elif (i["match_awayteam_score"]) == (i["match_hometeam_score"]):
             awayresult = "draw"
-        writedata(awayteamname, awayteamscore, awayresult)
+        writedata(awayteamid, awayteamname, awayteamscore, awayresult)
 
         
 #write data to database
-def writedata(team, score, result):
+def writedata(teamid, team, score, result):
        
     os.environ["GOOGLE_APPLICATION_CREDENTIALS"]="APIkey1.json"
     
     db = firestore.Client()
-    doc_ref = db.collection('footballtest').document(team)
+    doc_ref = db.collection('footballtest').document(teamid)
     
     #***NEED TO CHANGE THIS TO .UPDATE AFTER FIRST RUN, AS SET OVERWRITES DATA***
     doc_ref.set({
+        'team id': teamid,
+        'team name': team,
         'goals': score,
         'result': result
     })
     print("this has worked")
+    
+#ServiceUnavailable: 503 Connect Failed > investigating error.
         
                 
         
