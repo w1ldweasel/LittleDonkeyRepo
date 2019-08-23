@@ -1,10 +1,8 @@
 #GUI interface
 import tkinter as tk
-from tkinter import Button, Label, Message
+from tkinter import Button, Label, Toplevel, Entry
 
-#import sys
-#import random
-
+#import the regular expressions module
 import re
 
 #smtplib imported to allow use of an email function
@@ -18,6 +16,7 @@ import sqlite3 as lite
 class StdRedirector(tk.Frame):
     def __init__(self, text_widget):
         self.text_space = text_widget 
+       
         
 class Application(tk.Frame):
     #__init__ is used to initialize the class defined previously
@@ -66,13 +65,11 @@ class Application(tk.Frame):
                               command=self.master.destroy)
         self.quit.pack(side="bottom")
 
-      
-    
-    
+
     
     
     def F1_History(self):
-        
+                
         #this line of code allows SQLite to connect to the database ()  
         con = lite.connect('Formula1app.db')
         
@@ -87,17 +84,23 @@ class Application(tk.Frame):
             for row in rows:
                  print (row)
 #the code below is to allow the output from the database to be printed into the GUI window and not the python Console
-                 data = row
-                 m = Label(text=data)
-                 m.pack()
-                 #button = Button(text="Clear", command=m.destroy)
-                 button = Button(text="Clear", command=m.destroy)
-                 button.pack()
-
+#                
+            
+            top = Toplevel()    
+            top.title('Formula 1 History')
+            
+            data = row
+            
+            m = Label(top, text=data)
+            m.pack()
+            
+            button = Button(top, text="Close Window", command=top.destroy)
+            button.pack()
+            
    
        
     def F1_WorldChamp(self):
-            
+           
         con = lite.connect('Formula1app.db')
         
         with con:
@@ -110,10 +113,18 @@ class Application(tk.Frame):
             for row in rows:
                 print (row)
 #the code below is to allow the output from the database to be printed into the GUI window and not the python Console
+                
+
+                
+                top = Toplevel()    
+                top.title('Drivers Champions')
+                
                 data = row
-                m = Label(text=data)
+                
+                m = Label(top, text=data)
                 m.pack()
-                button = Button(text="Clear", command=m.destroy)
+                
+                button = Button(top, text="Close Window", command=top.destroy)
                 button.pack()
             
             
@@ -131,22 +142,39 @@ class Application(tk.Frame):
             for row in rows:
                 print (row) 
             #the code below is to allow the output from the database to be printed into the GUI window and not the python Console
-                data = row
-                m = Label(text=data)
-                m.pack()
-                button = Button(text="Clear", command=m.destroy)
-                button.pack()
+#              
+                
+                
+            top = Toplevel()    
+            top.title('Formula 1 Pole Positions')
+            
+            data = row
+            
+            m = Label(top, text=data)
+            m.pack()
+            
+            button = Button(top, text="Close Window", command=top.destroy)
+            button.pack()
                  
     def Questions_F1(self):
 
             #while True:
                 try:
+                    #entry widget to allow user to enter the question they want to ask
+                    eQuestion = Entry(width=50)
+                    eQuestion.pack()
+                    eQuestion.insert(0, "Please enter your Question here") #this allows font to appear within the entry widget directing the user to input data
+                    #entry widget to allow user to enter the email address they want to use
+                    eEmail = Entry(width=50)
+                    eEmail.pack()
+                    eEmail.insert(0, "Please enter your Email address here" )
                 #the below code allows the user to input a question to ask the admin
-                    question = input ("Please enter your Question here -->")
-                    email = input ("Please enter your Email address here-->")
+#                    question = input ("Please enter your Question here -->")
+#                    email = input ("Please enter your Email address here-->")
                     
                 #input validation for inputting the email address correctly
-                    m = re.match('[^@]+@[^@]+\.[^@]+',email)
+                    #m = re.match('[^@]+@[^@]+\.[^@]+',email)
+                    m = re.match('[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+',eEmail)
                     if m:
                         print("your question has been submited please allow 24 hours for a reply")
                     else:
@@ -160,8 +188,8 @@ class Application(tk.Frame):
                     server.login(config.EMAIL_ADDRESS, config.PASSWORD)
 #                message = "subject: {}\n\n{}" .format(self)
                 #the message will be the question that was inputted earlier by the user and this will be pinged accross
-                    message = email .format(self)
-                    message1 = question .format(self)
+                    message = eEmail .format(self)
+                    message1 = eQuestion .format(self)
 #                    message3 = question, email
                     server.sendmail(config.EMAIL_ADDRESS, config.EMAIL_ADDRESS, message, message1)
                     server.quit()
@@ -182,16 +210,20 @@ class Application(tk.Frame):
                 cur.execute("SELECT * FROM ConstructorsChampions")
             
                 rows = cur.fetchall()
-            
                 for row in rows:
                     print (row)
         #the code below is to allow the output from the database to be printed into the GUI window and not the python Console
-        
+                    
+                    top = Toplevel()    
+                    top.title('Constructors')
+                    
                     data = row
-                    m = Message(text=data)
+                    
+                    m = Label(top, text=data)
                     m.pack()
-                button = Button(text="Clear", command=m.destroy)
-                button.pack()         
+                    
+                    button = Button(top, text="Close Window", command=top.destroy)
+                    button.pack()
                     
                 
     def Generate_Fact(self):
@@ -214,11 +246,19 @@ class Application(tk.Frame):
 #        fact = print("{} {}".format(fun_facts, message), file=sys.stderr)  
                     
 #                    data = fact
+#                
+                    
+                    top = Toplevel()    
+            
+                    top.title('Facts')
+                    
                     data = row
-                    m = Message(text=data)
+                    
+                    m = Label(top, text=data)
                     m.pack()
-            button = Button(text="Clear", command=m.destroy)
-            button.pack() 
+                    
+                    button = Button(top, text="Close Window", command=top.destroy)
+                    button.pack()
             
            
 
