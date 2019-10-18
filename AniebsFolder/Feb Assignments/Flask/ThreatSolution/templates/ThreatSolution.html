@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+ <head>
+  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+  <body>
+  
+  
+   
+    {% extends "template.html" %}
+    {% block content %}
+    
+  
+<div class="container mt-3">
+  <h3>Threat Library</h3> 
+  <p>Type any word to filter relevant information:</p>  
+  <input class="form-control" id="myInput" type="text" placeholder="Search..">
+  <br>
+  <table class="table table-bordered">
+    <thead>
+       <table border="6" cellpadding="6" cellspacing="5">
+    
+    <td>Characteristics</td></b>
+    <td>Characteristic Guidance</td>
+    <td>Threat</td>
+    <td>Threat Description</td>
+    <td>Requirement</td>
+    <td>Assurance Requirement</td>
+    </thead>
+    <tbody id="myTable">
+    {% for row in data %}
+        <tr>
+        {% for d in row %}
+            <td data-toggle="collapse" data-target="{{ d }}"  class="clickable">{{ d }} </td>
+        {% endfor %}
+        </tr>
+    {% endfor %}
+    </table> 
+    </tbody>
+    </table>
+
+</div>
+</div>        
+</div>
+     
+<script>
+$(document).ready(function(){
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+</script>
+</div>
+
+   
+    
+ 
+   {% endblock %}
+  </body>
+</html>

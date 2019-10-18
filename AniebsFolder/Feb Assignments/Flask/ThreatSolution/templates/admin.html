@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+   <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+  
+  {% extends "template.html" %}
+  
+  {% block content %}
+  
+        
+    <div class="container mt-3">
+    <div class="panel=heading">
+    <h3>Add Record</h3>
+    <a class="pull-right btn btn-success" href="/login">Back</a><a class="pull-right btn btn-success" href="/logout">Logout</a> 
+    {% for message in get_flashed_messages() %}
+      {{ message }}
+      {% endfor %}
+    </div>
+
+    <div class="form-group">
+    <form action="{{ url_for('admin') }}" method="POST">
+    
+    <div class="form-group">
+    <label for="name">characteristics</label>
+    <input type="text" class="form-control" name="Characteristics`" id="Characteristics" required = "1">
+    </div>
+
+    <div class="form-group">
+    <label for="name">Characteristic Guidance</label>
+    <input type="text" class="form-control" name="CharacteristicGuidance" id="CharacteristicGuidance" required = "1">
+    </div>
+
+    <div class="form-group">
+    <label for="name">Threat</label>
+    <input type="text" class="form-control" name="Threat" id="Threat" required = "1">
+    </div>
+
+    <div class="form-group">
+    <label for="name">Threat Description</label>
+    <input type="text" class="form-control" name="ThreatDescription" id="ThreatDescription" required = "1">
+    </div>
+
+    <div class="form-group">
+    <label for="name">Requirement</label>
+    <input type="text" class="form-control" name="Requirement" id="Requirement"  required = "1">
+    </div>
+
+    <div class="form-group">
+    <label for="name">Assurance Requirement</label>
+    <input type="text" class="form-control" name="AssuranceRequirement" id="AssuranceRequirement" required = "1">
+    </div>
+
+
+    <div class="form-group">
+    <input type="submit" class="btn btn-success" name="submit" value="Add Record">
+    
+    </div>    
+    </form>
+
+    </div>
+    
+    </div>
+    {% endblock %}
+  </body>
+</html>
