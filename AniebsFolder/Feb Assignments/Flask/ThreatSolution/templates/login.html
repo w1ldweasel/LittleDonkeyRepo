@@ -9,18 +9,27 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </head>
   <body>
+  
     {% extends "template.html" %}
     {% block content %}
-    
    <div class="container">
-       <h3>please login</h3>
-       <br>
-       <form action="" method="post">
-           <input type="text" placeholder="Username" name="username" value="{{
-               request.form.username }}">
-            <input type="password" placeholder="password" name="password" value="{{
-               request.form.password }}">
-            <input class="btn btn=default" type="submit" value="login">     
+   <h3>Admin Page</h3>
+   <p>Welcome to the login page for the Admin page</p>            
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Username</th>
+        <th>Password</th>
+        <th></th>
+        </head>
+       </tr>
+       <form action="/login" method="post">
+        <tr>
+        <th><input type="text" placeholder="Username" name="username" value="{{
+               request.form.username }}"></th>
+          <th><input type="password" placeholder="password" name="password" value="{{
+               request.form.password }}"></th>
+          <th><input class="btn btn=default" type="submit" value="login"></th> </tr>   
         </form>
         {% if error %}
         <p class="error"><strong>Error:</strong> {{ error }} </p>

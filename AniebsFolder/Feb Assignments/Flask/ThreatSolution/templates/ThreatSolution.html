@@ -22,29 +22,38 @@
   <h3>Threat Library</h3> 
   <p>Type any word to filter relevant information:</p>  
   <input class="form-control" id="myInput" type="text" placeholder="Search..">
+  <input class="form-control" id="myInput1" type="text" placeholder="Search..">
   <br>
   <table class="table table-bordered">
     <thead>
        <table border="6" cellpadding="6" cellspacing="5">
     
-    <td>Characteristics</td></b>
-    <td>Characteristic Guidance</td>
-    <td>Threat</td>
-    <td>Threat Description</td>
-    <td>Requirement</td>
-    <td>Assurance Requirement</td>
+    <th>Characteristics</th>
+    <th>Characteristic Guidance</th>
+    <th>Threat</th>
+    <th>Threat Description</th>
+    <th>Requirement</th>
+    <th>Assurance Requirement</th>
     </thead>
     <tbody id="myTable">
     {% for row in data %}
         <tr>
-        {% for d in row %}
-            <td data-toggle="collapse" data-target="{{ d }}"  class="clickable">{{ d }} </td>
-        {% endfor %}
+        
+        <td>{{row.0}}</td>
+        <td>{{row.1}}</td>
+        <td>{{row.2}}</td>
+        <td>{{row.3}}</td>
+        <td>{{row.4}}</td>
+        <td>{{row.5}}</td>
+        
+        
         </tr>
     {% endfor %}
     </table> 
     </tbody>
     </table>
+    
+
 
 </div>
 </div>        
@@ -59,6 +68,7 @@ $(document).ready(function(){
     });
   });
 });
+
 </script>
 </div>
 

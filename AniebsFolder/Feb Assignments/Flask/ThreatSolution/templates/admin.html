@@ -13,60 +13,195 @@
   {% extends "template.html" %}
   
   {% block content %}
-  
-        
+   
     <div class="container mt-3">
     <div class="panel=heading">
-    <h3>Add Record</h3>
-    <a class="pull-right btn btn-success" href="/login">Back</a><a class="pull-right btn btn-success" href="/logout">Logout</a> 
+    
+    <h3>Admin page <a class="btn btn-success pull-right"  href="/logout">Logout</a></h3>
+    <p>Welcome</p>  
+    <p>Here you can add new threat details in to the Threat Solution Library or update and delete existing information</p>
+    
+    <br></br>    
+    
+    
     {% for message in get_flashed_messages() %}
+      
       {{ message }}
+     
       {% endfor %}
     </div>
-
+    
+    <br></br>
+    <h4>New Threat</h4>
+    <p>Add the required information to add new threat details into the library</p>
+    <table border="6" cellpadding="6" cellspacing="5">
+    <form action="{{url_for('insert')}}" method="POST">
+    <table class="table">
+    <thead>
+      <tr>
+        <th>Headings</th>
+        <th>Add information</th>
+       </tr> 
     <div class="form-group">
-    <form action="{{ url_for('admin') }}" method="POST">
+    <tr>
+    <th><label for="name">Characteristics</label></th>
+    <th><input type="text" placeholder="Characteristics" name="Characteristics" value="{{
+                request.form.Characteristics }}">
+                </th>
+                </tr>
+    </div>
     
     <div class="form-group">
-    <label for="name">characteristics</label>
-    <input type="text" class="form-control" name="Characteristics`" id="Characteristics" required = "1">
+    <tr>
+    <th><label for="name">Characteristic Guidance</label></th>
+    <th><input type="text" placeholder="CharacteristicGuidance" name="CharacteristicGuidance" value="{{
+                request.form.CharacteristicGuidance }}"></th>
+    </tr>
     </div>
 
     <div class="form-group">
-    <label for="name">Characteristic Guidance</label>
-    <input type="text" class="form-control" name="CharacteristicGuidance" id="CharacteristicGuidance" required = "1">
+    <tr>
+    <th><label for="name">Threat</label></th>
+    <th><input type="text" placeholder="Threat" name="Threat" value="{{
+                request.form.Threat }}"></th>
+    </tr>
     </div>
-
-    <div class="form-group">
-    <label for="name">Threat</label>
-    <input type="text" class="form-control" name="Threat" id="Threat" required = "1">
-    </div>
-
-    <div class="form-group">
-    <label for="name">Threat Description</label>
-    <input type="text" class="form-control" name="ThreatDescription" id="ThreatDescription" required = "1">
-    </div>
-
-    <div class="form-group">
-    <label for="name">Requirement</label>
-    <input type="text" class="form-control" name="Requirement" id="Requirement"  required = "1">
-    </div>
-
-    <div class="form-group">
-    <label for="name">Assurance Requirement</label>
-    <input type="text" class="form-control" name="AssuranceRequirement" id="AssuranceRequirement" required = "1">
-    </div>
-
-
-    <div class="form-group">
-    <input type="submit" class="btn btn-success" name="submit" value="Add Record">
     
+    <tr>
+    <div class="form-group">
+    <th><label for="name">Threat Description</label>
+    <th><input type="text" placeholder="ThreatDescription" name="ThreatDescription" value="{{
+                request.form.ThreatDescription }}">
+    </tr>
+    </div>
+    
+    <tr>
+    <div class="form-group">
+    <th><label for="name">Requirement</label>
+    <th><input type="text" placeholder="Requirement" name="Requirement" value="{{
+                request.form.Requirement }}">
+    </tr>
+    </div>
+    
+    <tr>
+    <div class="form-group">
+    <th><label for="name">Assurance Requirement</label>
+    <th><input type="text" placeholder="AssuranceRequirement" name="AssuranceRequirement" value="{{
+               request.form.AssuranceRequirement }}">    
+    </tr>
+    </div>
+  
+    <div class="form-group">
+    
+    <input class="pull-right btn btn-success" type="submit" value="submit">
     </div>    
     </form>
-
-    </div>
+    </table>
     
-    </div>
+    <br></br>
+    
+    <h4>Threat Library Edit & Delete</h4>
+    <p>Within the table below you have the option to edit the existing threat details to add additional details or simply remove information</p>
+    <p>if a threat needs to be removed you can also delete this from the threat library</p>
+    
+    <table border="6" cellpadding="6" cellspacing="5">
+    <th>ID</th>
+    <th>Characteristics</th></b>
+    <th>Characteristic Guidance</th>
+    <th>Threat</th>
+    <th>Threat Description</th>
+    <th>Requirement</th>
+    <th>Assurance Requirement</th>
+    <th>Action</th>
+   
+    </thead>
+    
+    <tbody id="myTable">
+      {% for row in data %}
+        <tr>
+        <td>{{row.6}}</td>
+        <td>{{row.0}}</td>
+        <td>{{row.1}}</td>
+        <td>{{row.2}}</td>
+        <td>{{row.3}}</td>
+        <td>{{row.4}}</td>
+        <td>{{row.5}}</td>
+        <td> 
+        <a href="/update/{{row.6}}" class="btn btn-warning btn-xs" data-toggle="modal" data-target="#modaledit{{row.6}}">Edit</a>
+        <a href="/delete/{{row.6}}" class="btn btn-danger btn-xs" onclick="return confirm('Confirm Delete?')">Delete</a>
+        </td>
+        
+        
+        </tr>
+    
+    
+<div id="modaledit{{row.6}}" class="modal fade" role="dialog">
+
+	<div class="modal-dialog">
+
+
+      <div class="modal-content">
+         <div class="modal-header">
+         <button type="button" class="close" data-dismiss="modaledit">&times;</button>
+         <h4 class="modal-title">Update Information</h4>
+         </div>
+
+
+         <div class="modal-body">
+         <form action="{{ url_for('update') }}" method="POST">
+               <div class="form-group">
+               <label>Characteristics:</label>
+               <input type="hidden"  name="id" value="{{row.6}}">
+               <input type="text" class="form-control" name="Characteristics" value="{{row.0}}">
+               </div>
+
+               <div class="form-group">
+               <label>Characteristic Guidance:</label>
+               <input type="text" class="form-control" name="CharacteristicGuidance" value="{{row.1}}">
+               </div>
+
+               <div class="form-group">
+               <label>Threat:</label>
+               <input type="text" class="form-control" name="Threat" value="{{row.2}}">
+               </div>
+               
+               <div class="form-group">
+               <label>Threat Description:</label>
+               <input type="text" class="form-control" name="ThreatDescription" value="{{row.3}}">
+               </div>
+               
+               <div class="form-group">
+               <label>Requirement:</label>
+               <input type="text" class="form-control" name="Requirement" value="{{row.4}}">
+               </div>
+               
+               <div class="form-group">
+               <label>Assurance Requirement:</label>
+               <input type="text" class="form-control" name="AssuranceRequirement" value="{{row.5}}">
+               </div>
+
+   
+               <div class="form-group">
+               <button class="btn btn-primary" type="submit">Update</button>
+               </div>
+               </form>
+               </div>
+               
+                <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+                </div>
+                </div>
+                
+         {% endfor %}
+            </tbody>
+            </table>
+            </div>
+            
+    
+    
+    
     {% endblock %}
+    
   </body>
 </html>

@@ -16,9 +16,9 @@ mydb = mysql.connector.connect(
       host="localhost",
       user="root",
       passwd="Threat123",
-      database="threatsolution"#this is to ensure the connection is created and pointing to this database
-        
-        )
+      database="threatsolution")#this is to ensure the connection is created and pointing to this database
+      
+
 mycursor = mydb.cursor()
 
 app = Flask(__name__)
@@ -39,12 +39,32 @@ def login_required(f):# this to ensure the page that requires a log in will only
 def home():
     return render_template("home.html")#Instead of returning hardcode HTML from the function, a HTML file can be rendered by the render_template() function
 
+@app.route('/useful-links')#@app.route is a decorator a way to extend the functionality of python in this case to route
+def UsefullLinks():
+    return render_template("usefullinks.html")#Instead of returning hardcode HTML from the function, a HTML file can be rendered by the render_template() function
+
 @app.route('/admin', methods = ['POST', 'GET'])
 @login_required#this decorator will ensure when a GET request is sent and there is no logged in session key it will redirect to the log in page and flash a message so the user can log in.
 def admin():
+    
+    mycursor = mydb.cursor()
+    mycursor.execute("SELECT * FROM threatlibrary")
+ #this line allows all of the data within the table mentioned above to be fetched
+    threatlibrary = mycursor.fetchall()
+    
+#once the connection above is made and the information is retrived from the database table  below
+#the return function will allow the render_template to direct the route to the specified URL this also alows us to
+#assign a variable to the result retrieved from the databse.
+    return render_template("admin.html", data=threatlibrary)
+    
+    
+  
 
+@app.route('/insert', methods = ['POST'])
+def insert():
     
     if request.method == "POST":  
+        
         Characteristics = request.form['Characteristics']
         CharacteristicGuidance = request.form['CharacteristicGuidance']
         Threat = request.form['Threat']
@@ -52,18 +72,51 @@ def admin():
         Requirement = request.form['Requirement']
         AssuranceRequirement = request.form['AssuranceRequirement']
         #the command below will allow us to insert into the specific table and columns with placeholders %s this can be replaced by any value we want
-        mycursor.executemany("INSERT INTO threatlibrary (Characteristics, CharacteristicGuidance, Threat, ThreatDescription, Requirement, AssuranceRequirement) VALUES (%s, %s, %s, %s, %s, %s)", (Characteristics, CharacteristicGuidance, Threat, ThreatDescription, Requirement, AssuranceRequirement))
-        mydb.connection.commit()#commit to the DB
+        
+    
+        mycursor.execute("INSERT INTO threatlibrary (Characteristics, CharacteristicGuidance, Threat, ThreatDescription, Requirement, AssuranceRequirement) VALUES (%s, %s, %s, %s, %s, %s)", (Characteristics, CharacteristicGuidance, Threat, ThreatDescription, Requirement, AssuranceRequirement))
+        
+        
+        mydb.commit()#commit to the DB
+       
         return redirect(url_for('admin'))
     
-    return render_template("admin.html")
+@app.route('/delete/<string:id_data>', methods = ['GET'])
+def delete(id_data):
+    flash("Record Has Been Deleted Successfully")
+    
+    mycursor.execute("DELETE FROM threatlibrary WHERE id=%s", (id_data,))
+    mydb.commit()
+    return redirect(url_for('admin'))
+    
+@app.route('/update', methods = ['POST','GET'])
+def update():
+
+    if request.method == 'POST':
+        flash("Record has been updated")
+        Characteristics = request.form['Characteristics']
+        CharacteristicGuidance = request.form['CharacteristicGuidance']
+        Threat = request.form['Threat']
+        ThreatDescription = request.form['ThreatDescription']
+        Requirement = request.form['Requirement']
+        AssuranceRequirement = request.form['AssuranceRequirement']
+        id_data = request.form['id']
+        
+        mycursor.execute("""
+               UPDATE threatlibrary
+               SET Characteristics=%s, CharacteristicGuidance=%s, Threat=%s, ThreatDescription=%s, Requirement=%s, AssuranceRequirement=%s
+               WHERE id=%s
+            """, (Characteristics, CharacteristicGuidance, Threat, ThreatDescription, Requirement, AssuranceRequirement, id_data))
+        flash("Data Updated Successfully")
+        mydb.commit()
+        return redirect(url_for('admin'))
 
 
 @app.route('/ThreatSolution', methods = ['GET', 'POST'])
 def Threatsolution():
     
 #this line allows the cursor to have a connection and the second line allows it to excecute * = all from the selected table
-#    mycursor = mydb.cursor()
+    mycursor = mydb.cursor()
     mycursor.execute("SELECT * FROM threatlibrary")
  #this line allows all of the data within the table mentioned above to be fetched
     threatlibrary = mycursor.fetchall()
@@ -81,7 +134,7 @@ def login():
     if request.method == 'POST':
         if request.form['username'] != 'pass' or request.form['password'] != 'pass':# this shows if the password and username don't match then it will display an error message
             error = 'invalid credentials. please try again.'
-        else:
+        else: 
             session['logged_in'] = True # if the users credentials are correct the value true is a sign to confirm log in
             flash('you are now logged in')
             return redirect(url_for('admin')) #this is the page that the login page will redirect too
