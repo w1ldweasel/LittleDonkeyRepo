@@ -8,7 +8,8 @@ Created on Sat Sep 5
 from flask import Flask, render_template, request, redirect, url_for, session, flash
 from functools import wraps
 import mysql.connector # by importing this driver it allows the connection to be established to the MySQL database
-
+import config
+#from flask_talisman import Talisman, ALLOW_FROM
 
 
 #the code below establishes a connection with the MYSQL server
@@ -22,8 +23,17 @@ mydb = mysql.connector.connect(
 mycursor = mydb.cursor()
 
 app = Flask(__name__)
+#talisman = Talisman(app)
 
-app.secret_key = "Flask123" #this is an encryption key for the secret key variable for the session created when the user logs in it prevents someone accessing from the client side
+app.secret_key = config.secret_key
+
+#app.secret_key = "Flask123" #this is an encryption key for the secret key variable for the session created when the user logs in it prevents someone accessing from the client side
+
+
+@app.after_request
+def apply_caching(response):
+    response.headers["X-Frame-Options"] = "SAMEORIGIN"
+    return response
 
 def login_required(f):# this to ensure the page that requires a log in will only be accessible if a logged in session is valid
     @wraps(f)
@@ -36,6 +46,7 @@ def login_required(f):# this to ensure the page that requires a log in will only
     return wrap
 
 @app.route('/home')#@app.route is a decorator a way to extend the functionality of python in this case to route the 
+#@talisman(frame_options=ALLOW_FROM)
 def home():
     return render_template("home.html")#Instead of returning hardcode HTML from the function, a HTML file can be rendered by the render_template() function
 

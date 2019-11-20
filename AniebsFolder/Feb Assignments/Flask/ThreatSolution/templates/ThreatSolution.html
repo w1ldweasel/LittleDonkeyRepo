@@ -16,13 +16,14 @@
    
     {% extends "template.html" %}
     {% block content %}
+    {% filter escape %}
     
   
 <div class="container mt-3">
   <h3>Threat Library</h3> 
   <p>Type any word to filter relevant information:</p>  
   <input class="form-control" id="myInput" type="text" placeholder="Search..">
-  <input class="form-control" id="myInput1" type="text" placeholder="Search..">
+  
   <br>
   <table class="table table-bordered">
     <thead>
@@ -54,7 +55,6 @@
     </table>
     
 
-
 </div>
 </div>        
 </div>
@@ -74,7 +74,7 @@ $(document).ready(function(){
 
    
     
- 
+ {% endfilter %}
    {% endblock %}
   </body>
 </html>

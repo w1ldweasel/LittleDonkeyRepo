@@ -13,6 +13,7 @@
   {% extends "template.html" %}
   
   {% block content %}
+    {% filter escape %}
    
     <div class="container mt-3">
     <div class="panel=heading">
@@ -199,8 +200,8 @@
             </div>
             
     
-    
-    
+        {% endfilter %}
+
     {% endblock %}
     
   </body>
