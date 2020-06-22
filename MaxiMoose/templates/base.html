@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% if title %}
+    <title>VA Watchlist - {{title}}</title>
+    {% else %}
+    <title>VA Watchlist</title>
+    {% endif %}
+</head>
+<body>
+    <!--div><a href="/index">VA Watchlist Home</a> </div-->
+    <div><a href={{url_for('index')}}>VA Watchlist Home</a> | <a href={{url_for('city')}}>My Party City</a> </div>
+    <!--div><a href={{url_for('city')}}>My Party City</a> </div-->
+    <hr>
+    {% block content %}{% endblock %}
+</body>
+</html>

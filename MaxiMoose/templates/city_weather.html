@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+{% block content %}
+    <h1 style="font-family:Comic Sans MS; text-align:center;">Party Weather Check </h1>
+    <form action="" method="post" novalidate>
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.city.label }}<br>
+            {{ form.city(size=20) }}
+        </p>
+
+        <p>
+            {{ form.state.label }}<br>
+            {{ form.state(size=20) }}
+        </p>
+
+        <p>
+            {{ form.submit()}}
+        </p>
+    </form>
+    <p></p>
+{% endblock %}

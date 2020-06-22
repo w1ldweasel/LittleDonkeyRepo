@@ -1,0 +1,7 @@
+I learnt this by picking apart a few websites which I liked the look of and then doing a bunch of googling around bootstrap. Also, I found there is a resource on linkedinlearning which was hmm ok. It was enough to give me some of the basics, and it was this one : 
+
+https://www.linkedin.com/learning/bootstrap-4-essential-training?trk=learning-serp_learning_search-card&upsellOrderOrigin=homepage-learning_learning-search-bar_search-submit
+
+(obvs, linked in learning is what replaced Lynda and is free, so don’t pay) 
+
+I wanted something more meaningful to develop, so I built www.footretreat.co.uk for a friend, which is a flask app using bootstrap and which is deployed on google app engine via a git ops cloudbuild pipeline
