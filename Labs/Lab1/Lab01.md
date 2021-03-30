@@ -4,12 +4,12 @@
 
 **The following is a Python coding task to analyse historic weather data.**
 
-1. Use 10+ years of weather data to calculate the monthly average for: 
+1. Use 10+ years of weather data to calculate the monthly averages for: 
   * minimum and maximum temperatures, 
   * precipitation,
   * hours of sunlight.
 
-2. Present this data in chart form for an average year, label the chart and data elements.
+2. Present this data in chart form for a whole year's worth of monthly values, label the chart and data elements.
 
 3. Publish the chart in an electronic document, e.g. HTML.  
 
