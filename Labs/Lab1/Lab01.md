@@ -11,7 +11,7 @@
 
 2. Present this data in chart form for a whole year's worth of monthly values, label the chart and data elements.
 
-3. Publish the chart in an electronic document, e.g. HTML.  
+3. Publish the chart in an electronic document, e.g. HTML or Jupyter notebook.  
 
 
 ## Notes
@@ -28,4 +28,6 @@ This resource from the Met Office has historic data from a number of weather sta
 If they are limited to certain locations, advise what those are as a list.
 
 - If you are unable to complete this lab on time, include #TODO comments on how you intend to finish the code.
+
+Upload your solution to a public github repo and advise what that location is for the code to be reviewed.
 
