@@ -24,7 +24,7 @@ This resource from the Met Office has historic data from a number of weather sta
 
 - You have discretion in the number of charts used to meet the brief.
 
-- Let the user select the city or location by entering it as a command line argument or setting a properties file parameter.  
+- Let the user select the city or location by entering it as a command line argument or setting a properties file parameter or as a parameter in a UI or API request, you are free to choose any type of user input method.  
 If they are limited to certain locations, advise what those are as a list.
 
 - If you are unable to complete this lab on time, include #TODO comments on how you intend to finish the code.
