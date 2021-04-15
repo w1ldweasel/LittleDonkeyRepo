@@ -15,7 +15,7 @@
 
 
 ## Notes
-This resource from the Met Office has historic data from a number of weather stations. 
+This resource from the Met Office has historic data from a number of weather stations: 
 [Met Office Historic Data](https://www.metoffice.gov.uk/research/climate/maps-and-data/historic-station-data)
 
 - You can use this or another resource that provides access to data from an API service or file store.
