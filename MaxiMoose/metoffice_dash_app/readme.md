@@ -1,9 +1,9 @@
-##Python version used in this repo - 3.9.5
+1. Python version used in this repo - 3.9.5
 
-##Create new python virtual environment
+2. Create new python virtual environment
 
-##pip install -r requirements.txt
+3. pip install -r requirements.txt
 
-##Run this app with `python app.py` 
+4. Run this app with `python app.py` 
 
-##Visit [http://127.0.0.1:8050/](http://127.0.0.1:8050/)  in your web browser.
+5. Visit [http://127.0.0.1:8050/](http://127.0.0.1:8050/)  in your web browser.
