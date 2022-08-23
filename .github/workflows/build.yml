@@ -6,7 +6,7 @@ on:
   pull_request:
     types: [opened, synchronize, reopened]
     
- jobs:
+jobs:
   flake8-lint:
     runs-on: ubuntu-latest
     name: Lint
